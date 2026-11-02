@@ -6,7 +6,7 @@ const events = [
     title: "Ceremony & Reception",
     venue: "Alpine Country Club",
     address: "80 Anderson Avenue, Demarest, NJ 07627",
-    time: "5:30 PM – 6:15 PM",
+    time: "6 PM – 12 PM",
   },
  ,
 ];
@@ -38,7 +38,7 @@ const EventDetails = () => (
         className="mt-16 md:mt-20"
       >
         <Link to="/rsvp" className="btn-ghost">
-          Respond to our invitation →
+          RSVP →
         </Link>
       </motion.div>
     </div>
