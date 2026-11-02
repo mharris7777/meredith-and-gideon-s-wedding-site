@@ -28,7 +28,7 @@ const HeroSection = () => {
               src={heroImage.url}
               alt={photos[0].alt}
               className="w-full h-auto object-cover"
-              style={{ maxWidth: "min(66vh, 82vw, 1100px)" }}
+              style={{ maxWidth: "min(74vh, 86vw, 1400px)" }}
             />
           </div>
         </button>

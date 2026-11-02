@@ -34,6 +34,7 @@ function PhotoLightbox({ photos, index, onClose, onPrev, onNext }: LightboxProps
           aria-modal="true"
           aria-label={photo.alt}
           onClick={onClose}
+          className="fixed inset-0 z-[100] flex flex-col bg-background/95 backdrop-blur-md"
           className="fixed inset-0 z-[100] flex flex-col items-center justify-center gap-6 bg-background/95 backdrop-blur-md px-4 py-16"
         >
           <button

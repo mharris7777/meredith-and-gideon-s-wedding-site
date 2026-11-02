@@ -28,7 +28,7 @@ const PageHero = () => {
               src={heroImage.url}
               alt={photos[0].alt}
               className="w-full h-auto object-cover"
-              style={{ maxWidth: "min(72vh, 86vw, 1200px)" }}
+              style={{ maxWidth: "min(80vh, 88vw, 1500px)" }}
             />
           </div>
         </button>
