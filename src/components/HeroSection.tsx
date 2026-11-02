@@ -47,7 +47,7 @@ const HeroSection = () => {
           transition={{ duration: 1.2, delay: 1.4 }}
           className="text-4xl md:text-6xl lg:text-8xl font-serif text-foreground text-center"
         >
-          SEPTEMBER 4TH, 2027
+          ♡
         </motion.p>
       </motion.div>
       {lightbox.element}
