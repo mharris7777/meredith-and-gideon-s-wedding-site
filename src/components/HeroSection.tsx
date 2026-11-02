@@ -25,7 +25,7 @@ const HeroSection = () => (
         transition={{ duration: 1.2, delay: 1.0 }}
         className="text-4xl md:text-6xl lg:text-8xl font-serif text-foreground text-center leading-snug mb-4"
       >
-        We're Getting Married
+        MEREDITH & GIDEON
       </motion.h1>
       <motion.p
         initial={{ opacity: 0 }}
@@ -33,7 +33,7 @@ const HeroSection = () => (
         transition={{ duration: 1.2, delay: 1.4 }}
         className="text-4xl md:text-6xl lg:text-8xl font-serif text-foreground text-center"
       >
-        MEREDITH & GIDEON
+        SEPTEMBER 4TH, 2027
       </motion.p>
     </motion.div>
   </section>
