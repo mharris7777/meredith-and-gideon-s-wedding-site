@@ -63,13 +63,13 @@ function PhotoLightbox({ photos, index, onClose, onPrev, onNext }: LightboxProps
                 exit={{ opacity: 0, scale: 0.97 }}
                 transition={{ duration: 0.3 }}
                 onClick={stop}
-                className="polaroid-frame inline-block max-w-full"
+                className="polaroid-frame inline-block max-w-[1400px]"
               >
                 <img
                   src={photo.src}
                   alt={photo.alt}
                   className="block w-auto h-auto object-contain"
-                  style={{ maxWidth: "min(88vw, 1500px)", maxHeight: "calc(100vh - 150px)" }}
+                  style={{ maxWidth: "100%", maxHeight: "calc(100vh - 150px)" }}
                 />
               </motion.figure>
             </AnimatePresence>
