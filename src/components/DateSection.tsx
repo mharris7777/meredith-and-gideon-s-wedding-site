@@ -10,16 +10,13 @@ const DateSection = () => (
       className="content-left"
     >
       <p className="body-text">
-        Join us for an evening of celebration as we begin our journey together.
-        The festivities will commence with an intimate garden ceremony at sunset,
-        followed by a reception filled with dinner, dancing, and joy. We kindly
-        request semi-formal attire—garden party chic is encouraged.
+        MEREDITH + GIDEON
       </p>
       <p className="body-text mt-8">
-        We can't wait to share this moment with the people who mean the most to us.
+        DEMAREST, NEW JERSEY
       </p>
       <p className="mt-10 text-xl md:text-2xl lg:text-3xl text-muted-foreground font-serif">
-        — June 17, 2025
+        — SEPTEMBER 4TH, 2027
       </p>
     </motion.div>
   </section>
