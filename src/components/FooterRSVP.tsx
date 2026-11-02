@@ -11,7 +11,7 @@ const FooterRSVP = () => (
         viewport={{ once: true }}
         className="text-4xl md:text-6xl lg:text-8xl font-serif text-foreground mb-10 md:mb-14 leading-snug"
       >
-        Will You Celebrate With Us?
+        Please let us know if you are able to celebrate.
       </motion.h2>
       <motion.div
         initial={{ opacity: 0 }}
