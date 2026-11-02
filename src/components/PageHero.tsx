@@ -12,7 +12,7 @@ const PageHero = () => (
       <div className="polaroid-frame inline-block mb-14 md:mb-20">
         <img
           src={heroImage}
-          alt="Emma and Cooper celebrating together"
+          alt="Meredith and Gideon celebrating together"
           className="w-full h-auto object-cover"
           style={{ maxWidth: "calc(min(50.5vh, 50.5vw, 5000px))" }}
         />

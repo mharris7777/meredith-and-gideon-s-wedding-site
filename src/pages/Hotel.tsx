@@ -34,9 +34,10 @@ const Hotel = () => (
           <p className="overline mb-4">Group Rate Details</p>
           <p className="body-text mb-6">
             We've arranged a special group rate of <span className="font-medium">$189 per night</span> for
-            the Cooper Wedding. This rate is available for stays between June 16–18, 2025. Simply
-            mention the <span className="font-medium">Cooper Wedding Block</span> when
-            calling reservations, or use code <span className="font-medium">COOPERWED25</span> online.
+            the Meredith & Gideon wedding. This rate is available for stays between June 16–18, 2025. Simply
+            mention the <span className="font-medium">Meredith & Gideon Wedding Block</span> when
+            calling reservations, or use code <span className="font-medium">MEREDITHGIDEON25</span> online.
+
           </p>
           <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground font-serif">
             Please book by May 15, 2025 to guarantee the group rate.
