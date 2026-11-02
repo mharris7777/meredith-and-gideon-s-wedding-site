@@ -1,0 +1,1 @@
+Matching uploaded couple photos are used through Lovable Assets JSON pointers in the existing hero and gallery components, keeping original media outside the repository.

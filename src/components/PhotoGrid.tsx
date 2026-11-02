@@ -1,17 +1,19 @@
 import { motion } from "framer-motion";
-import photo1 from "@/assets/photo-grid-1.jpg";
-import photo2 from "@/assets/photo-grid-2.jpg";
-import photo3 from "@/assets/photo-grid-3.jpg";
+import photo1 from "@/assets/meredith-gideon-020.jpg.asset.json";
+import photo2 from "@/assets/meredith-gideon-017.jpg.asset.json";
+import photo3 from "@/assets/meredith-gideon-006.jpg.asset.json";
+import photo4 from "@/assets/meredith-gideon-001.jpg.asset.json";
 
 const photos = [
-  { src: photo1, alt: "Couple laughing at outdoor café" },
-  { src: photo2, alt: "Beach sunset silhouettes" },
-  { src: photo3, alt: "Cozy fireplace portrait" },
+  { src: photo1.url, alt: "Meredith and Gideon embracing on a garden bench" },
+  { src: photo2.url, alt: "Meredith and Gideon surrounded by garden flowers" },
+  { src: photo3.url, alt: "Meredith and Gideon walking together in black and white" },
+  { src: photo4.url, alt: "Meredith and Gideon beneath autumn leaves" },
 ];
 
 const PhotoGrid = () => (
   <section className="section-padding">
-    <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+    <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
       {photos.map((photo, index) => (
         <motion.div
           key={index}
