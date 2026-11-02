@@ -3,17 +3,12 @@ import { Link } from "react-router-dom";
 
 const events = [
   {
-    title: "Ceremony",
-    venue: "Riverside Botanical Gardens",
-    address: "485 Magnolia Drive, Charleston, SC 29401",
+    title: "Ceremony & Reception",
+    venue: "Alpine Country Club",
+    address: "80 Anderson Avenue, Demarest, NJ 07627",
     time: "5:30 PM – 6:15 PM",
   },
-  {
-    title: "Reception",
-    venue: "The Charleston Grand Ballroom",
-    address: "723 Harbor View Avenue, Charleston, SC 29401",
-    time: "7:00 PM – 11:30 PM",
-  },
+ ,
 ];
 
 const EventDetails = () => (
