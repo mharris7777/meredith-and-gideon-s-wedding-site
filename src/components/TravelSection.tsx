@@ -12,15 +12,13 @@ const TravelSection = () => (
     >
       <p className="overline mb-6">Travel & Accommodations</p>
       <p className="body-text mb-6">
-        We've reserved a block of rooms at The Aurora Grand Hotel in the Historic
-        District. Simply mention the Meredith & Gideon wedding when booking your reservation
-        to receive our group rate. Rooms are available from June 16–18, 2025.
+        We've reserved a block of rooms at the Teaneck Marriott at Glenpointe. Rooms are available from September 3–5, 2027.
       </p>
       <Link to="/hotel" className="btn-ghost">
-        The Aurora Grand Hotel →
+        Teaneck Marriott at Glenpointe →
       </Link>
       <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground mt-3 font-serif">
-        892 Meeting Street, Charleston, SC 29401
+        100 Frank W. Burr Blvd, Teaneck, NJ 07666
       </p>
     </motion.div>
   </section>
