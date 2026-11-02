@@ -22,7 +22,7 @@
     --secondary-foreground: 0 0% 92%;
 
     --muted: 0 0% 52%;
-    --muted-foreground: 0 0% 78%;
+    --muted-foreground: 0 0% 100%;
 
     --accent: 0 0% 55%;
     --accent-foreground: 0 0% 95%;
@@ -98,13 +98,13 @@
   }
 
   .body-text {
-    @apply text-2xl md:text-3xl lg:text-4xl leading-[1.7] text-foreground/95 font-serif font-normal;
+    @apply text-2xl md:text-3xl lg:text-4xl leading-[1.7] text-foreground font-serif font-normal;
   }
 
   .form-input {
     @apply w-full px-0 py-3 border-0 border-b border-foreground/25 rounded-none bg-transparent
            focus:outline-none focus:border-foreground/50 transition-all text-foreground font-sans 
-           placeholder:text-muted-foreground/60 text-xl md:text-2xl lg:text-3xl;
+           placeholder:text-muted-foreground text-xl md:text-2xl lg:text-3xl;
   }
 
   .form-label {
