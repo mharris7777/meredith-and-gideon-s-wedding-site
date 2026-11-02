@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 150 18% 77%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
+
+    --primary: 0 0% 92%;
+    --primary-foreground: 0 0% 15%;
+
+    --secondary: 0 0% 57%;
+    --secondary-foreground: 0 0% 92%;
+
+    --muted: 0 0% 52%;
+    --muted-foreground: 0 0% 78%;
+
+    --accent: 0 0% 55%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 68%;
+    --input: 0 0% 75%;
+    --ring: 0 0% 92%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .polaroid-frame {
+    @apply bg-card p-3 pb-8 md:p-4 md:pb-10 shadow-[0_15px_40px_-10px_rgba(0,0,0,0.25)] rotate-[-1.5deg];
+  }
+
+  .section-padding {
+    @apply py-32 md:py-44 lg:py-56 px-6;
+  }
+
+  .content-narrow {
+    @apply max-w-2xl mx-auto;
+  }
+
+  .content-left {
+    @apply max-w-3xl mx-auto text-left;
+  }
+
+  .btn-primary {
+    @apply inline-block px-8 py-3 md:px-10 md:py-4 bg-white text-primary-foreground font-semibold rounded-full 
+           hover:opacity-90 transition-all duration-300 hover:scale-105 shadow-lg font-sans;
+  }
+
+  .btn-outline {
+    @apply inline-block px-10 py-3 border-2 border-white text-white font-semibold rounded-full 
+           hover:bg-white/10 transition-all duration-300 font-sans tracking-[0.15em] text-sm;
+  }
+
+  .btn-ghost {
+    @apply inline-block text-foreground font-sans underline decoration-1 underline-offset-4 
+           hover:opacity-70 transition-opacity duration-300;
+  }
+
+  .overline {
+    @apply text-xs md:text-sm tracking-[0.3em] uppercase text-muted-foreground font-sans font-light;
+  }
+
+  .body-text {
+    @apply text-2xl md:text-3xl lg:text-4xl leading-[1.7] text-foreground/95 font-serif font-normal;
+  }
+
+  .form-input {
+    @apply w-full px-0 py-3 border-0 border-b border-foreground/25 rounded-none bg-transparent
+           focus:outline-none focus:border-foreground/50 transition-all text-foreground font-sans 
+           placeholder:text-muted-foreground/60 text-xl md:text-2xl lg:text-3xl;
+  }
+
+  .form-label {
+    @apply block text-sm md:text-base tracking-[0.2em] uppercase font-light text-muted-foreground mb-3 font-sans;
+  }
+
+  .event-card {
+    @apply bg-card rounded-xl p-8 md:p-10 shadow-lg;
+  }
+}
