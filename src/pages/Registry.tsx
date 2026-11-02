@@ -8,16 +8,6 @@ const REGISTRY_URL =
 
 const categories = [
   {
-    title: "Kitchen & Dining",
-    blurb: "The pots, plates, and small luxuries we'll reach for every day.",
-    icon: "🍽️",
-  },
-  {
-    title: "Home & Living",
-    blurb: "Comfortable, lasting pieces for the rooms we're still filling.",
-    icon: "🏡",
-  },
-  {
     title: "Honeymoon Fund",
     blurb: "Two weeks together across Japan and Vietnam.",
     icon: "✈️",
