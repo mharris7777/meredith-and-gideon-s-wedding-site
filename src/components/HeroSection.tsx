@@ -12,7 +12,8 @@ const HeroSection = () => (
       <div className="polaroid-frame inline-block mb-14 md:mb-20">
         <img
           src={heroImage}
-          alt="Emma and Cooper celebrating together"
+          alt="Meredith and Gideon celebrating together"
+
           className="w-full h-auto object-cover"
           style={{ maxWidth: "calc(min(50.5vh, 50.5vw, 5000px))" }}
         />
@@ -32,7 +33,7 @@ const HeroSection = () => (
         transition={{ duration: 1.2, delay: 1.4 }}
         className="text-4xl md:text-6xl lg:text-8xl font-serif text-foreground text-center"
       >
-        Emma & Cooper
+        Meredith & Gideon
       </motion.p>
     </motion.div>
   </section>

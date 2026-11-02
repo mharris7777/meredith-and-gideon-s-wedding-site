@@ -13,7 +13,7 @@ const TravelSection = () => (
       <p className="overline mb-6">Travel & Accommodations</p>
       <p className="body-text mb-6">
         We've reserved a block of rooms at The Aurora Grand Hotel in the Historic
-        District. Simply mention the Cooper wedding when booking your reservation
+        District. Simply mention the Meredith & Gideon wedding when booking your reservation
         to receive our group rate. Rooms are available from June 16–18, 2025.
       </p>
       <Link to="/hotel" className="btn-ghost">
