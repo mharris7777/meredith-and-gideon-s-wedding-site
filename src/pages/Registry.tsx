@@ -74,7 +74,7 @@ const Registry = () => (
             rel="noopener noreferrer"
             className="text-foreground underline decoration-1 underline-offset-4 hover:opacity-70 transition-opacity"
           >
-            bloomingdales.com/registry/Meredith-Harris-Gideon-Abramowitz/1631089
+          
           </a>
         </p>
       </motion.div>
