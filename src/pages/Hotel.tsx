@@ -33,10 +33,9 @@ const Hotel = () => (
         <div className="mb-16 md:mb-20">
           <p className="overline mb-4">Group Rate Details</p>
           <p className="body-text mb-6">
-            We've arranged a special group rate of <span className="font-medium">$189 per night</span> for
-            the Meredith & Gideon's wedding. This rate is available for stays between September 3-5, 2027. Simply
-            mention the <span className="font-medium">Meredith & Gideon Wedding Block</span> when
-            calling reservations, or use code <span className="font-medium">MEREDITHGIDEON25</span> online.
+            We've arranged a special group rate of for Meredith & Gideon's wedding. 
+            This rate is available for stays between September 3-5, 2027. Book online here, or when
+            calling reservations, ask for the Harris/Abramowitz Wedding Room Block.
 
           </p>
           <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground font-serif">
