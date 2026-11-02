@@ -33,7 +33,7 @@ const HeroSection = () => (
         transition={{ duration: 1.2, delay: 1.4 }}
         className="text-4xl md:text-6xl lg:text-8xl font-serif text-foreground text-center"
       >
-        Meredith & Gideon
+        MEREDITH & GIDEON
       </motion.p>
     </motion.div>
   </section>
