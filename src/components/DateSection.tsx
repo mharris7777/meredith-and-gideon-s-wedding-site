@@ -10,7 +10,7 @@ const DateSection = () => (
       className="content-left"
     >
       <p className="body-text">
-        MEREDITH + GIDEON
+        ALPINE COUNTRY CLUB
       </p>
       <p className="body-text mt-8">
         DEMAREST, NEW JERSEY
