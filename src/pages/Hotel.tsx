@@ -65,7 +65,7 @@ const Hotel = () => (
           </p>
           <p className="body-text">
             The hotel is a 20-minute drive from Alpine Country Club (ceremony venue).
-            Shuttle Services will be provided to and from the venue.
+            Shuttle services will be provided to and from the venue.
           </p>
         </div>
 
