@@ -16,4 +16,4 @@
 ## Open
 - [ ] RSVP form does not save responses yet (blocked on: Lovable Cloud backend enablement)
 - [ ] Design polish plan (`.lovable/plan.md`) not yet applied
-- [ ] Placeholder event details to be replaced when the user provides real ones
+- [ ] Confirm the ceremony & reception end time (home page says "6 PM – 12 PM", likely midnight)
