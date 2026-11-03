@@ -11,3 +11,4 @@
 - [ ] RSVP form does not save responses yet (blocked on: Lovable Cloud backend enablement)
 - [ ] Design polish plan (`.lovable/plan.md`) not yet applied
 - [ ] Placeholder event details to be replaced when the user provides real ones
+- [ ] Remove the "Sarah Johnson" name and email placeholders from the RSVP form
