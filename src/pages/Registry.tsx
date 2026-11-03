@@ -6,24 +6,6 @@ import { Link } from "react-router-dom";
 const REGISTRY_URL =
   "https://www.bloomingdales.com/registry/Meredith-Harris-Gideon-Abramowitz/1631089";
 
-const categories = [
-  {
-    title: "Kitchen & Dining",
-    blurb: "The pots, plates, and small luxuries we'll reach for every day.",
-    icon: "🍽️",
-  },
-  {
-    title: "Home & Living",
-    blurb: "Comfortable, lasting pieces for the rooms we're still filling.",
-    icon: "🏡",
-  },
-  {
-    title: "Honeymoon Fund",
-    blurb: "Two weeks together across Japan and Vietnam.",
-    icon: "✈️",
-  },
-];
-
 const Registry = () => (
   <div className="min-h-screen bg-background">
     <Navigation />
@@ -42,8 +24,7 @@ const Registry = () => (
         </h1>
         <p className="body-text">
           Your presence at our wedding is the greatest gift of all. For those who have
-          asked, we're registered at Bloomingdale's — here are the few things we'd love as
-          we build our home together.
+          asked, we're registered at Bloomingdale's.
         </p>
       </motion.div>
 
@@ -78,24 +59,6 @@ const Registry = () => (
           </a>
         </p>
       </motion.div>
-
-      <div className="content-left mb-16">
-        {categories.map((group) => (
-          <motion.div
-            key={group.title}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2 }}
-            viewport={{ once: true }}
-            className="mb-12 md:mb-14"
-          >
-            <p className="overline mb-3">{group.icon} {group.title}</p>
-            <p className="text-2xl md:text-3xl font-serif text-foreground leading-relaxed">
-              {group.blurb}
-            </p>
-          </motion.div>
-        ))}
-      </div>
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
