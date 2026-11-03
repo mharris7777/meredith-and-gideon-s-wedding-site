@@ -51,8 +51,8 @@ const RSVP = () => {
   }
 
   const fields = [
-    { label: "Full Name", name: "name", type: "text", placeholder: "Sarah Johnson" },
-    { label: "Email Address", name: "email", type: "email", placeholder: "sarah.johnson@email.com" },
+    { label: "Full Name", name: "name", type: "text" },
+    { label: "Email Address", name: "email", type: "email" },
   ];
 
   return (
@@ -102,7 +102,6 @@ const RSVP = () => {
                 id={field.name}
                 name={field.name}
                 type={field.type}
-                placeholder={field.placeholder}
                 value={formData[field.name as keyof typeof formData]}
                 onChange={handleChange}
                 required
