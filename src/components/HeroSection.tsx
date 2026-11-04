@@ -41,6 +41,23 @@ const HeroSection = () => {
         >
           MEREDITH & GIDEON
         </motion.h1>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.2, delay: 1.4 }}
+          className="mt-10 md:mt-14 text-center"
+        >
+          <p className="body-text">
+            ALPINE COUNTRY CLUB
+          </p>
+          <p className="body-text">
+            DEMAREST, NEW JERSEY
+          </p>
+          <p className="mt-8 text-xl md:text-2xl lg:text-3xl text-muted-foreground font-serif">
+            — SEPTEMBER 4TH, 2027
+          </p>
+        </motion.div>
       </motion.div>
       {lightbox.element}
     </section>

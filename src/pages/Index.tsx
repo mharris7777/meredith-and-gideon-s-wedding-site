@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
-import DateSection from "@/components/DateSection";
 import EventDetails from "@/components/EventDetails";
 import TravelSection from "@/components/TravelSection";
 import PhotoGrid from "@/components/PhotoGrid";
@@ -11,7 +10,6 @@ const Index = () => (
   <div className="min-h-screen bg-background">
     <Navigation />
     <HeroSection />
-    <DateSection />
     <EventDetails />
     <TravelSection />
     <PhotoGrid />
