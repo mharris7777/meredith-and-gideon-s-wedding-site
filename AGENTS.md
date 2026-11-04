@@ -1,1 +1,2 @@
 Matching uploaded couple photos are used through Lovable Assets JSON pointers in the existing hero and gallery components, keeping original media outside the repository.
+Site-wide CSS overrides live in `src/styles/*.css`, imported at the top of `src/index.css` before the Tailwind directives, and must out-specify Tailwind utilities (e.g. `body [class*="cursor-"]`) so they are not silently beaten by utility classes.
