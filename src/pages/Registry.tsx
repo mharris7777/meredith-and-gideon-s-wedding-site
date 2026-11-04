@@ -48,33 +48,6 @@ const Registry = () => (
         >
           View Our Registry
         </a>
-        <p className="mt-6 font-sans text-sm md:text-base tracking-wide break-all">
-          <a
-            href={REGISTRY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-foreground underline decoration-1 underline-offset-4 hover:opacity-70 transition-opacity"
-          >
-            bloomingdales.com/registry/Meredith-Harris-Gideon-Abramowitz/1631089
-          </a>
-        </p>
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2 }}
-        viewport={{ once: true }}
-        className="content-left mb-16"
-      >
-        <p className="overline mb-4">A Note From Us</p>
-        <p className="body-text">
-          We've been so fortunate to already have a home filled with love (and most of the
-          basics!). If you'd like to contribute to our honeymoon fund, we'd be over the
-          moon. We're dreaming of two weeks in Japan and Vietnam — your generosity would
-          help make those adventures even more magical. But truly, just having you there on
-          our big day means the world.
-        </p>
       </motion.div>
 
       <div className="text-center">
