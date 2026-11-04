@@ -37,7 +37,7 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 1.0 }}
-          className="text-4xl md:text-6xl lg:text-8xl font-serif text-foreground text-center leading-snug mb-4"
+          className="text-4xl md:text-6xl lg:text-8xl font-serif text-foreground text-center leading-snug"
         >
           MEREDITH & GIDEON
         </motion.h1>
