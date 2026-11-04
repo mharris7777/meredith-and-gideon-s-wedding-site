@@ -55,7 +55,7 @@ const HeroSection = () => {
             DEMAREST, NEW JERSEY
           </p>
           <p className="mt-8 text-xl md:text-2xl lg:text-3xl text-muted-foreground font-serif">
-            — SEPTEMBER 4TH, 2027
+            SEPTEMBER 4TH, 2027
           </p>
         </motion.div>
       </motion.div>
