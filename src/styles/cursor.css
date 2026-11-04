@@ -1,25 +1,27 @@
 /* Heart cursor for computers (mouse or trackpad). Phones and tablets keep their own pointer. */
-@media (pointer: fine) {
+@media (pointer: fine) and (hover: hover) {
   html {
     cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAEeElEQVR42rVWXUwUVxg99w6sywpq0xppoRhogjFN7A8hmHSRNcEHLW2Udqto2hBNrImiKcY+Ol19IJGHpokvNsQ0xqDlARJKQYK6TSBRsRK7VMyauNZGIoTFH1j2b2bu6cMsuP4hVjzJvMz3zTn3O/N9916BFAgIARAAetybi51Ox2fC4VhFKbKEYYWsaKz3YTTi//xKR5S6LgFA+HyqvaTKtdiVvVZzZZUzUysSijEmk4F4PPnbur5fbzzJLQBA13XpO3RIteSVZeV9vOrIouKi2qUfrMx25edCZGYgOf4A94MhTAZDwci/wz+W95w4BgC96775Nrsg77ucFUUr3lhRBMebS0DDRPTOCMb+uh6ZuBH6ZXgg8P1Xw5di+sGD0ufzKRAUEAInsGxhf+0Bv9F3lTRMkjSfeJQKP+DDU53srd51vLd61/GHpzqpwg9IUj2Vb5g0+q6yv/aA/wSWLYQQIChEi9erOftiC3LXrfy9VN/nQVGeASCDSgk85rcApFAAONl7RQOAnPISC4CAoiSZ8suGkJIATISGMy/7fvpjpOf6p3F3VgIA4N+w/ah5IUCSSWVX92woRWVZM9UryyKVen66zZU0LwTo37D9KABo5z754v23Sj/8Obd2E6CUJjQtbZ1PQAgIIUBFCUIKKe12eF66lIBSUr6bqyYHb3z0JRa1SeF01ea7Sx0AQOL5Xz9GJCDknFJnOPPdpQ7hdNVKx+Jst7MwnwDE3OReEjancBbm07E4252hubKWa0tyhO3Y/CumOIW2JEdorqzlUgghISVeO6SEEEJKlUzeZzRu203Ou06Kk4zGoZLJ+zIZmQqaY/dS0/baQHPsHpKRqaA0ItFzE8Fbr93RieAtGJHoOZkRS7TdHQhMwbK01O4wv00jJWFZ2t2BwFRGLNEm1/a33YneHu4yh0IAYFGp+fPR5rLMoRCit4e71va33ZEAkBgdawi1dqemRsz3EIpQazcSo2MN9iq8Xg0A/FU7TiYuXyNJI7VfvhJSHEbi8jX6q3acnNbSfvB6BTwe8c6lf3qnxse+fruiLEcscBC0j63/OQsQUipEojJw5Njo5N+3N723a3PMs3SpHW9JVdm1uroy1NhEkqZlWWq2k2C2E8WyLEXSDDU2sWt1dWW6xgz8FXoGAHSv2bo3fLqTJA3LNF9OVClapqlIGuHTnexes3VvOvdTmA70eGrqx1vOkKTBuVaqFGlXZoy3nGGPp6Z+VrEZUd1OOO/ZVh9u7iBJi6Q1WyOlYhZJK9zcwfOebfXpXC/EdOLZ8i27bzY2kZHYo+5NL1Y96kZGYrzZ2MSz5Vt2v5TYU/+0bOP6wX2HR82hkE1M2hbbNiuShjkU4uC+w6PdZRvXz8nGF4m2l1QVXPTWdY43d5Dx5Ix9jCc53tzBi966zvaSqoJXEptGejv7K2r2DO5vmLBGwrRGwhzc3zDhr6jZ86zcV4Ku63L6tt1a6C4eqPMFB+p8wdZCdzEAUNelnorPK/7cuTMTANorvQXtld6C9HdzxX8p6PLy5Vpt+wAAAABJRU5ErkJggg==") 14 12, auto;
   }
 
+  /* Everything else picks the heart up from its parent... */
   body,
   body * {
     cursor: inherit;
   }
 
-  /* Clickable things get the filled heart so they still feel tappable. */
-  a,
-  button,
-  [role="button"],
-  [role="link"],
-  input,
-  textarea,
-  select,
-  label,
-  summary,
-  [class*="cursor-"] {
+  /* ...but clickable things get the filled heart, and this beats Tailwind's
+     cursor-zoom-in / cursor-pointer utilities because it is more specific. */
+  body a,
+  body button,
+  body [role="button"],
+  body [role="link"],
+  body input,
+  body textarea,
+  body select,
+  body label,
+  body summary,
+  body [class*="cursor-"] {
     cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAEa0lEQVR42rWWXWxURRTH//+Zu3t3YVu7bQN0Q1mgCaVI/CqGGCtWX5BAjSZoTAixkhgrNMGCiD7wjDEqhIBiTBQfmhh9wAimmIBijPHBiB9ptEsKRmiANoUty+7ddvfOHB/2LlRScJFyXu5kPs5v5n9nzjlEYCJCkhK0FwHoAHAPgCiA0wC+B/AtSU9EFACQtCIyA8BjAB4BsBBAHsDvAA6RPHm9bwYdKlgcBfBW/vxop//X2dj4uRGI78Oti8OZOxvRpnkpFQ7tIvlBsO4lWyj25E+dafaHhjFxMQ06DiKJWXAWNGajDfUHALxGMl9msEwXkZkADl85/F37H58dQmHsikF5SyJgyFHxhUkuWvcUQvc1fwwAxV9TL5zs/QLp03+LFH0LEpCSYuGaKr3k2Q5UrXn0OIA1JHMiQoqIBuAC+OrC+5+2D3z5ddGtizvK0SxpXYYCZnzC+tmctHQ+owHgzwOfGyc2kzriqvKckmaA9Y1MXEz7i59cGZrz8nPHAawGMFGWdO/4kR82/bj7w+LMxOyQLfqY0kiAhMl6BgB0bIaGCCAy5XQVcpA7N1x86JUXQ5EnHt5HspsicvfE8OiJ317dqS2gru3xJkaWbxoqMFGAvfftN4w7u/4BBaCz0D8YzqczoFZERS6kUhioFfPpDAr9g2EAnQpA26WBQdFhh6jMx62ZADrs8NLAoABocwAkc8OjpKMhMv1EEQEdzdzwKAEkFQAl1uJOW8BQCkDarYoB1grJaQeRBKwVtyoGAGkFIFXV2ABbNHKnTmeLRqoaGwAgpQAcq25uuuOSBoxjCsBBtSCRi9bXauv7035K6/sSra/VakEiB+CgIjnk1tb0JVcsh8l5hkpN3/9TCibnmeSK5XBra/pIDpW976xb2QblupzOpyEiUK7LupVtALATAJSIaJIn1Jz63pa1q3UhPeZT69s/ndYopMf8lrWrtZpT30vyhIhoVdqIKABb4h3tF+JN87XvefZ2pKVS8D3Pxpvm63hH+wUAWwJGKSmWngtHEHHXt/RsoKIS4/uC//MuSRjfF0UlLT0biIi7nuRIwLDlUsGIiEPyqJNMbG7d1qXFyxsRuTUoCRER8fKmdVuXdpKJzSSPBr4NUEpH5YjgBwN7wsuWbG3dvtGx2Zyxxkgl8lIpWGPEZnOmdftGJ7xsyVaSewKfVxMsp7hZTgDfUvhl4J2f33zPWgicaFSJMTe8IH4+bxWI1tc3qvD9i7eSfPd6GG6UbCdBN42fOrs3tesjZIbO+eGauxyx9louJEGlUBi77FfPTTjNPRsQaWrsJrlvKhhult0nQVdZb/zA+U8Ozjrd942vYzGtQw4BwBR9MdmsWbjqcafh+adH1IxIJ8m+G8HwX+XEJOg8APvzP/Wv6t/fi4lMxgKAW12tlnatQ/TBpX0AukieuRms0mihJ7W7C+nLmYEdu2Vgx24ppC9nRKR7qrm3G6JUudoWkUUm66VM1ksFFfq/xqe7XAgF33mBzFf7KrV/ABj5RrivifinAAAAAElFTkSuQmCC") 14 12, pointer;
   }
 }
