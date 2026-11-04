@@ -48,13 +48,7 @@ const HeroSection = () => {
           transition={{ duration: 1.2, delay: 1.4 }}
           className="mt-10 md:mt-14 text-center"
         >
-          <p className="body-text">
-            ALPINE COUNTRY CLUB
-          </p>
-          <p className="body-text">
-            DEMAREST, NEW JERSEY
-          </p>
-          <p className="mt-8 text-xl md:text-2xl lg:text-3xl text-muted-foreground font-serif">
+          <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground font-serif">
             SEPTEMBER 4TH, 2027
           </p>
         </motion.div>
