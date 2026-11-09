@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const RegistrySection = () => (
-  <section className="section-padding">
+  <section className="section-padding pt-16 md:pt-24 lg:pt-28">
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
