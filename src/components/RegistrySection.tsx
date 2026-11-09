@@ -12,7 +12,7 @@ const RegistrySection = () => (
     >
       <p className="overline mb-6">Registry</p>
       <p className="body-text mb-6">
-        Meredith and Gideon are registered at Bloomingdale's, with a honeymoon fund for our
+        We're registered at Bloomingdale's, with a honeymoon fund for our
         two weeks in Japan and Vietnam.
       </p>
       <Link to="/registry" className="btn-ghost">
