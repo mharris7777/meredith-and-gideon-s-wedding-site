@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import DateSection from "@/components/DateSection";
 import heroImage from "@/assets/meredith-gideon-028.jpg";
 import { usePhotoLightbox, type Photo } from "@/components/PhotoLightbox";
 
@@ -49,6 +50,7 @@ const HeroSection = () => {
         >
           ♡
         </motion.p>
+        <DateSection />
       </motion.div>
       {lightbox.element}
     </section>
