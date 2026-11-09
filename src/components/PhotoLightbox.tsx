@@ -75,12 +75,6 @@ function PhotoLightbox({ photos, index, onClose, onPrev, onNext }: LightboxProps
             </AnimatePresence>
           </div>
 
-          <div className="px-6 pb-6 pt-2 text-center">
-            <p className="text-foreground font-serif text-lg md:text-2xl max-w-4xl mx-auto">
-              {photo.alt}
-            </p>
-          </div>
-
           {many && (
             <button
               type="button"
