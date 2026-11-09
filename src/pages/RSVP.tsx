@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { submitRSVP } from "@/lib/rsvp";
 import Navigation from "@/components/Navigation";
-import PageHero from "@/components/PageHero";
 
 const RSVP = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -49,8 +48,7 @@ const RSVP = () => {
     return (
       <div className="min-h-screen bg-background">
         <Navigation />
-        <PageHero />
-        <div className="pb-24 px-6 flex items-center justify-center">
+        <div className="pt-24 md:pt-32 pb-24 px-6 flex items-center justify-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -77,9 +75,8 @@ const RSVP = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      <PageHero />
 
-      <section className="pb-12 md:pb-16 px-6 text-center">
+      <section className="pt-24 md:pt-32 pb-12 md:pb-16 px-6 text-center">
         <div className="content-left">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
