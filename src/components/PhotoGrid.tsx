@@ -1,15 +1,15 @@
 import { motion } from "framer-motion";
-import photo1 from "@/assets/meredith-gideon-020.jpg.asset.json";
-import photo2 from "@/assets/meredith-gideon-017.jpg.asset.json";
-import photo3 from "@/assets/meredith-gideon-006.jpg.asset.json";
-import photo4 from "@/assets/meredith-gideon-001.jpg.asset.json";
+import photo1 from "@/assets/meredith-gideon-020.jpg";
+import photo2 from "@/assets/meredith-gideon-017.jpg";
+import photo3 from "@/assets/meredith-gideon-006.jpg";
+import photo4 from "@/assets/meredith-gideon-001.jpg";
 import { usePhotoLightbox, type Photo } from "@/components/PhotoLightbox";
 
 const photos: Photo[] = [
-  { src: photo1.url, alt: "Meredith and Gideon embracing on a garden bench" },
-  { src: photo2.url, alt: "Meredith and Gideon surrounded by garden flowers" },
-  { src: photo3.url, alt: "Meredith and Gideon walking together in black and white" },
-  { src: photo4.url, alt: "Meredith and Gideon beneath autumn leaves" },
+  { src: photo1, alt: "Meredith and Gideon embracing on a garden bench" },
+  { src: photo2, alt: "Meredith and Gideon surrounded by garden flowers" },
+  { src: photo3, alt: "Meredith and Gideon walking together in black and white" },
+  { src: photo4, alt: "Meredith and Gideon beneath autumn leaves" },
 ];
 
 const PhotoGrid = () => {

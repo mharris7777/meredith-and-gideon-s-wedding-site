@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
-import heroImage from "@/assets/meredith-gideon-021.jpg.asset.json";
+import heroImage from "@/assets/meredith-gideon-021.jpg";
 import { usePhotoLightbox, type Photo } from "@/components/PhotoLightbox";
 
 const photos: Photo[] = [
-  { src: heroImage.url, alt: "Meredith and Gideon smiling at each other on a garden bench" },
+  { src: heroImage, alt: "Meredith and Gideon smiling at each other on a garden bench" },
 ];
 
 const PageHero = () => {
@@ -25,7 +25,7 @@ const PageHero = () => {
         >
           <div className="polaroid-frame inline-block mb-14 md:mb-20">
             <img
-              src={heroImage.url}
+              src={heroImage}
               alt={photos[0].alt}
               className="w-full h-auto object-cover"
               style={{ maxWidth: "min(80vh, 88vw, 1500px)" }}
