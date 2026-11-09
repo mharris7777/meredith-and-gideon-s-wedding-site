@@ -76,7 +76,7 @@ const RSVP = () => {
             transition={{ duration: 1.2, delay: 0.2 }}
             className="body-text mb-3"
           >
-            Please RSVP by Tuesday, August 3, 2027
+            Please RSVP by Friday, August 6, 2027
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
