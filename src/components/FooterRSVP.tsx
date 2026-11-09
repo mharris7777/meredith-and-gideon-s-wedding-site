@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const FooterRSVP = () => (
-  <section className="py-48 md:py-64 lg:py-80 px-6">
+  <section className="rsvp-section py-48 md:py-64 lg:py-80 px-6">
     <div className="text-center max-w-2xl mx-auto">
       <motion.h2
         initial={{ opacity: 0 }}

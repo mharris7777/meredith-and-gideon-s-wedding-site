@@ -16,7 +16,7 @@ const PhotoGrid = () => {
   const lightbox = usePhotoLightbox(photos);
 
   return (
-    <section className="section-padding">
+    <section className="section-padding bg-accent/50">
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10">
         {photos.map((photo, index) => (
           <motion.div
