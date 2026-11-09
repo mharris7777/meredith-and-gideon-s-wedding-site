@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
+import EventDetails from "@/components/EventDetails";
 import TravelSection from "@/components/TravelSection";
 import PhotoGrid from "@/components/PhotoGrid";
 import RegistrySection from "@/components/RegistrySection";
