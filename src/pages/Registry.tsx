@@ -32,8 +32,7 @@ const Registry = () => (
         </h1>
         <p className="body-text">
           Your presence at our wedding is the greatest gift of all. For those who have
-          asked, we're registered at Bloomingdale's — here are the few things we'd love as
-          we build our home together.
+          asked, we're registered at Bloomingdale's.
         </p>
       </motion.div>
 
