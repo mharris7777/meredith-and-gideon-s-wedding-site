@@ -1,10 +1,15 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { submitRSVP } from "@/lib/rsvp";
 import Navigation from "@/components/Navigation";
 import PageHero from "@/components/PageHero";
 
 const RSVP = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const submissionId = useRef<string>();
+  const inFlight = useRef(false);
   const [attending, setAttending] = useState<string>("accepts");
   const [formData, setFormData] = useState({
     name: "",
@@ -12,7 +17,6 @@ const RSVP = () => {
     message: "",
     guests: "1",
     dietary: "",
-    questions: "",
   });
 
   const handleChange = (
@@ -21,9 +25,24 @@ const RSVP = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (inFlight.current) return;
+    inFlight.current = true;
+    setSending(true);
+    setSubmitError("");
+    try {
+      submissionId.current ??= crypto.randomUUID();
+      await submitRSVP(import.meta.env.VITE_RSVP_ENDPOINT, {
+        ...formData, attending, submissionId: submissionId.current,
+      });
+      setSubmitted(true);
+    } catch {
+      setSubmitError("We couldn't confirm your RSVP was saved. Please try again or contact Meredith and Gideon. Your response may have arrived; please contact us if you are unsure.");
+    } finally {
+      inFlight.current = false;
+      setSending(false);
+    }
   };
 
   if (submitted) {
@@ -177,8 +196,9 @@ const RSVP = () => {
             />
           </div>
 
-          <button type="submit" className="btn-primary w-full text-xl md:text-2xl text-center">
-            Send RSVP
+          {submitError && <p role="alert" className="body-text mb-6">{submitError}</p>}
+          <button disabled={sending} aria-busy={sending} type="submit" className="btn-primary w-full text-xl md:text-2xl text-center">
+            {sending ? "Sending…" : "Send RSVP"}
           </button>
         </motion.div>
       </form>

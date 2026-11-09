@@ -4,6 +4,6 @@ import path from "path";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/meredith-and-gideon-s-wedding-site/",
+  base: process.env.GITHUB_PAGES_BASE || "/meredith-and-gideon-s-wedding-site/",
   resolve: { alias: { "@": path.resolve(__dirname, "./src") } },
 });

@@ -1,1 +1,1 @@
-Matching uploaded couple photos are used through Lovable Assets JSON pointers in the existing hero and gallery components, keeping original media outside the repository.
+Photo assets are local JPG files in src/assets. Import them directly so Vite emits base-aware URLs. Preserve the existing wedding design and photography.
