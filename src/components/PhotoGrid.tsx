@@ -17,7 +17,7 @@ const PhotoGrid = () => {
 
   return (
     <section className="section-padding">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-4 gap-2 sm:gap-6 md:gap-10">
         {photos.map((photo, index) => (
           <motion.div
             key={index}
