@@ -1,3 +1,4 @@
+import "./Wallpaper.css";
 
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
@@ -5,7 +6,7 @@ import PageHero from "@/components/PageHero";
 import { Link } from "react-router-dom";
 
 const Hotel = () => (
-  <div className="min-h-screen bg-background">
+  <div className="min-h-screen wallpaper-page wallpaper-hotel">
     <Navigation />
     <PageHero />
 

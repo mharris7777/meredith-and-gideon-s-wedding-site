@@ -1,0 +1,53 @@
+.wallpaper-page {
+  position: relative;
+  isolation: isolate;
+  background-color: hsl(var(--background));
+}
+
+.wallpaper-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-position: center;
+  background-size: cover;
+}
+
+.wallpaper-registry::before {
+  background-image: linear-gradient(hsl(var(--background) / 0.2), hsl(var(--background) / 0.2)), url("../assets/wallpaper-registry.jpg");
+}
+
+.wallpaper-hotel::before {
+  background-image: linear-gradient(hsl(var(--background) / 0.15), hsl(var(--background) / 0.15)), url("../assets/wallpaper-hotel.jpg");
+}
+
+.wallpaper-rsvp::before {
+  background-image: linear-gradient(hsl(var(--background) / 0.2), hsl(var(--background) / 0.2)), url("../assets/wallpaper-rsvp.jpg");
+}
+
+.wallpaper-page .content-left {
+  background: hsl(var(--background) / 0.95);
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 40px hsl(var(--foreground) / 0.06);
+}
+
+.wallpaper-rsvp form.content-left {
+  width: calc(100% - 3rem);
+  margin-bottom: 3rem;
+}
+
+.wallpaper-page .form-input {
+  background-color: hsl(var(--card) / 0.6);
+}
+
+.wallpaper-rsvp > section > .content-left {
+  text-align: center;
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .wallpaper-page .content-left {
+    background: hsl(var(--background));
+  }
+}

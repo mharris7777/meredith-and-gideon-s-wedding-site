@@ -1,3 +1,4 @@
+import "./Wallpaper.css";
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import PageHero from "@/components/PageHero";
@@ -15,7 +16,7 @@ const categories = [
 ];
 
 const Registry = () => (
-  <div className="min-h-screen bg-background">
+  <div className="min-h-screen wallpaper-page wallpaper-registry">
     <Navigation />
     <PageHero />
 

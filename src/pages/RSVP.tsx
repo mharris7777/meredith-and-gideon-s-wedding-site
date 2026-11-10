@@ -1,3 +1,4 @@
+import "./Wallpaper.css";
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { submitRSVP } from "@/lib/rsvp";
@@ -46,7 +47,7 @@ const RSVP = () => {
 
   if (submitted) {
     return (
-      <div className="min-h-screen bg-background">
+      <div className="min-h-screen wallpaper-page wallpaper-rsvp">
         <Navigation />
         <div className="pt-24 md:pt-32 pb-24 px-6 flex items-center justify-center">
           <motion.div
@@ -73,7 +74,7 @@ const RSVP = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen wallpaper-page wallpaper-rsvp">
       <Navigation />
 
       <section className="pt-24 md:pt-32 pb-12 md:pb-16 px-6 text-center">
