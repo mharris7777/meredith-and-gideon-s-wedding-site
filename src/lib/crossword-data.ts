@@ -264,7 +264,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "DOG",
-      "clue": "Their favorite animal is famously a best friend",
+      "clue": "Favorite four-legged friend",
       "row": 7,
       "col": 22,
       "direction": "down",
