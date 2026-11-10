@@ -60,8 +60,8 @@ function PasswordGate({ children }: { children: ReactNode }) {
     <main className="min-h-screen min-h-[100svh] flex items-center justify-center px-6 py-16">
       <section className="w-full max-w-md text-center" aria-labelledby="welcome-title">
         <p className="overline mb-6">Meredith &amp; Gideon</p>
-        <h1 id="welcome-title" className="text-4xl md:text-5xl mb-5">Welcome to our wedding</h1>
-        <p className="mb-10 text-lg">Please enter the password to join us.</p>
+        <h1 id="welcome-title" className="text-4xl md:text-5xl mb-5">Welcome to our wedding website.</h1>
+        <p className="mb-10 text-lg">Please enter the password below.</p>
         <form onSubmit={unlock} className="text-left">
           <label htmlFor="wedding-password" className="form-label">Password</label>
           <input
