@@ -1,7 +1,6 @@
 import "./Wallpaper.css";
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
-import PageHero from "@/components/PageHero";
 import { Link } from "react-router-dom";
 
 const REGISTRY_URL =
@@ -18,9 +17,8 @@ const categories = [
 const Registry = () => (
   <div className="min-h-screen wallpaper-page wallpaper-registry">
     <Navigation />
-    <PageHero />
 
-    <section className="pb-16 md:pb-24 px-6">
+    <section className="pt-24 md:pt-32 pb-16 md:pb-24 px-6">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
