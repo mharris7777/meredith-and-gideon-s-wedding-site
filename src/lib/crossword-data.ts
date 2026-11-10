@@ -64,7 +64,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "PERFECTMATCH",
-      "clue": "Ideal couple—or just the thing to light a unity candle?",
+      "clue": "Ideal Couple, or an Alcaraz/Sinner Showdown",
       "row": 11,
       "col": 9,
       "direction": "across",
