@@ -11,7 +11,8 @@
   z-index: -1;
   pointer-events: none;
   background-position: center;
-  background-size: cover;
+  background-size: auto, min(80vw, 800px) auto;
+  background-repeat: no-repeat, repeat;
 }
 
 .wallpaper-registry::before {
