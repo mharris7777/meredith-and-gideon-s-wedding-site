@@ -255,7 +255,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "JAPAN",
-      "clue": "Destination on Meredith’s wish list—and their honeymoon itinerary",
+      "clue": "Half of their highly anticipated honeymoon",
       "row": 4,
       "col": 19,
       "direction": "across",
