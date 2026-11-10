@@ -1,0 +1,94 @@
+.homepage-compact > section {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.homepage-compact > section:first-of-type {
+  min-height: auto;
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+}
+
+.homepage-compact > section:first-of-type .polaroid-frame {
+  margin-bottom: 1.5rem;
+}
+
+.homepage-compact > section:first-of-type > div > button img {
+  width: auto;
+  max-width: min(74vh, 80vw, 1000px) !important;
+  max-height: 42vh;
+}
+
+.homepage-compact .homepage-couple-name {
+  margin-bottom: 0.25rem;
+}
+
+.homepage-compact > section:first-of-type > div > p {
+  font-size: 2.5rem;
+  line-height: 1.1;
+}
+
+.homepage-compact > section:first-of-type > div > div:last-child {
+  margin-top: 1rem;
+}
+
+.homepage-compact > section:first-of-type > div > div:last-child > p + p {
+  margin-top: 0.25rem;
+}
+
+.homepage-details {
+  max-width: 76rem;
+  margin-inline: auto;
+}
+
+.homepage-details > section {
+  padding: 2rem 1.5rem;
+}
+
+.homepage-details .overline,
+.homepage-details .body-text {
+  margin-bottom: 1rem;
+}
+
+.homepage-details .body-text {
+  font-size: 1.375rem;
+  line-height: 1.5;
+}
+
+.homepage-compact > section:last-of-type h2 {
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  margin-bottom: 1.5rem;
+  line-height: 1.25;
+}
+
+@media (min-width: 768px) {
+  .homepage-compact > section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .homepage-compact .homepage-couple-name {
+    font-size: clamp(3.75rem, 6vw, 5rem);
+  }
+
+  .homepage-details .body-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .homepage-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  .homepage-details > section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.homepage-compact > section[aria-roledescription="carousel"] > div {
+  max-width: 64rem;
+}
