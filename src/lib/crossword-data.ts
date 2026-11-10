@@ -210,7 +210,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "JAYZ",
-      "clue": "Their biggest celebrity encounter",
+      "clue": "Their best celebrity encounter",
       "row": 12,
       "col": 22,
       "direction": "down",
