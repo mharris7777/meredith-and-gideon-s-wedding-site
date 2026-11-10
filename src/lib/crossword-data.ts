@@ -7,7 +7,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
   "entries": [
     {
       "answer": "DEVILINTHEWHITECITY",
-      "clue": "Favorite Larson book pairing a fair with foul play",
+      "clue": "Their favorite novel, centered around the Chicago World's Fair",
       "row": 14,
       "col": 4,
       "direction": "across",
