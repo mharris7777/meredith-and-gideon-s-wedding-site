@@ -17,3 +17,13 @@
   transform-origin: center;
   will-change: transform;
 }
+
+@media (max-width: 767px) {
+  .orbit-stage {
+    height: clamp(230px, 52vw, 330px);
+  }
+
+  .orbit-photo {
+    width: clamp(112px, 32vw, 220px);
+  }
+}

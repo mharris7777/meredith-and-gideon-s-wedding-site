@@ -70,8 +70,10 @@ const PhotoGrid = () => {
 
   return (
     <section className="section-padding" aria-label="Meredith and Gideon's photos" aria-roledescription="carousel"
-      onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
-      onFocusCapture={() => setFocused(true)}
+      onMouseEnter={() => {
+        if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) setHovered(true);
+      }} onMouseLeave={() => setHovered(false)}
+      onFocusCapture={(event) => setFocused(event.target.matches(":focus-visible"))}
       onBlurCapture={(event) => {
         if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setFocused(false);
       }}>
