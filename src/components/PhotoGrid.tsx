@@ -1,4 +1,6 @@
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { useReducedMotion } from "framer-motion";
+import useEmblaCarousel from "embla-carousel-react";
 import photo1 from "@/assets/meredith-gideon-020.jpg";
 import photo2 from "@/assets/meredith-gideon-017.jpg";
 import photo3 from "@/assets/meredith-gideon-006.jpg";
@@ -14,33 +16,70 @@ const photos: Photo[] = [
 
 const PhotoGrid = () => {
   const lightbox = usePhotoLightbox(photos);
+  const reduceMotion = useReducedMotion();
+  const [viewportRef, carousel] = useEmblaCarousel({ loop: true, align: "center", duration: 70 });
+  const [playing, setPlaying] = useState(true);
+  const [hovered, setHovered] = useState(false);
+  const [focused, setFocused] = useState(false);
+  const [selected, setSelected] = useState(0);
+
+  useEffect(() => {
+    if (!carousel) return;
+    const update = () => setSelected(carousel.selectedScrollSnap());
+    update();
+    carousel.on("select", update);
+    carousel.on("reInit", update);
+    return () => {
+      carousel.off("select", update);
+      carousel.off("reInit", update);
+    };
+  }, [carousel]);
+
+  useEffect(() => {
+    if (!carousel || !playing || hovered || focused || reduceMotion) return;
+    const timer = window.setInterval(() => carousel.scrollNext(), 7000);
+    return () => window.clearInterval(timer);
+  }, [carousel, playing, hovered, focused, reduceMotion]);
 
   return (
-    <section className="section-padding">
-      <div className="max-w-7xl mx-auto grid grid-cols-4 gap-2 sm:gap-6 md:gap-10">
-        {photos.map((photo, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1.2 }}
-            viewport={{ once: true }}
-            className="aspect-[4/5] overflow-hidden"
-          >
-            <button
-              type="button"
-              onClick={() => lightbox.open(index)}
-              aria-label={`View larger photo: ${photo.alt}`}
-              className="w-full h-full cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-foreground/60"
-            >
-              <img
-                src={photo.src}
-                alt={photo.alt}
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-              />
-            </button>
-          </motion.div>
-        ))}
+    <section className="section-padding" aria-label="Meredith and Gideon's photos" aria-roledescription="carousel"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onFocusCapture={() => setFocused(true)}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setFocused(false);
+      }}
+    >
+      <div className="max-w-7xl mx-auto">
+        <div ref={viewportRef} className="overflow-hidden">
+          <div className="flex touch-pan-y -ml-4 md:-ml-8">
+            {photos.map((photo, index) => (
+              <div key={photo.src} className="flex-none min-w-0 basis-[85%] sm:basis-[65%] lg:basis-[48%] pl-4 md:pl-8"
+                role="group" aria-roledescription="slide" aria-label={`${index + 1} of ${photos.length}`}>
+                <button
+                  type="button"
+                  onClick={() => { setPlaying(false); lightbox.open(index); }}
+                  aria-label={`View larger photo: ${photo.alt}`}
+                  className="block w-full aspect-[4/5] overflow-hidden cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-foreground/60"
+                >
+                  <img src={photo.src} alt={photo.alt} className="w-full h-full object-cover" draggable={false} />
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="flex items-center justify-center gap-6 mt-8">
+          <button type="button" onClick={() => carousel?.scrollPrev()} aria-label="Previous gallery photo"
+            className="w-11 h-11 rounded-full border border-foreground/40 text-2xl hover:bg-foreground/10">‹</button>
+          <span className="overline" aria-live="off">{selected + 1} / {photos.length}</span>
+          {!reduceMotion && (
+            <button type="button" onClick={() => setPlaying((value) => !value)}
+              aria-label={playing ? "Pause photo carousel" : "Play photo carousel"}
+              className="btn-ghost text-sm">{playing ? "Pause" : "Play"}</button>
+          )}
+          <button type="button" onClick={() => carousel?.scrollNext()} aria-label="Next gallery photo"
+            className="w-11 h-11 rounded-full border border-foreground/40 text-2xl hover:bg-foreground/10">›</button>
+        </div>
       </div>
       {lightbox.element}
     </section>
