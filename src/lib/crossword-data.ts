@@ -237,7 +237,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "USOPEN",
-      "clue": "Their favorite sporting event",
+      "clue": "The other best part of Labor Day Weekend",
       "row": 15,
       "col": 2,
       "direction": "down",
