@@ -11,7 +11,7 @@ for (const entry of puzzle.entries) {
     (memberships[key] ??= []).push(entry);
   });
 }
-export const STORAGE_KEY = 'mg-crossword-v2';
+export const STORAGE_KEY = 'mg-crossword-v3';
 export function readProgress(): Record<string, string> {
   try {
     const saved: unknown = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '{}');

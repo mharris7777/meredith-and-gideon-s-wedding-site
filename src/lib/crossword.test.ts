@@ -40,7 +40,7 @@ describe('wedding crossword', () => {
   });
   it('links the revealer and exactly four wedding-wordplay answers', () => {
     const themed = puzzle.entries.filter(entry => entry.theme === 'wedding');
-    expect(themed.map(entry => entry.answer).sort()).toEqual(['WEDDING', 'TIETHEKNOT', 'TAKETHEPLUNGE', 'PERFECTMATCH', 'SEALEDWITHAKISS'].sort());
+    expect(themed.map(entry => entry.answer).sort()).toEqual(['WEDDING', 'TIETHEKNOT', 'AISLEBETHERE', 'PERFECTMATCH', 'SEALEDWITHAKISS'].sort());
     expect(themed.find(entry => entry.answer === 'WEDDING')?.direction).toBe('across');
     expect(puzzle.entries.some(entry => entry.answer === 'KNUCKLES')).toBe(false);
   });
