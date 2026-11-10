@@ -17,8 +17,7 @@ const photos: Photo[] = [
 const PhotoGrid = () => {
   const lightbox = usePhotoLightbox(photos);
   const reduceMotion = useReducedMotion();
-  const [viewportRef, carousel] = useEmblaCarousel({ loop: true, align: "center", duration: 70 });
-  const [playing, setPlaying] = useState(true);
+  const [viewportRef, carousel] = useEmblaCarousel({ loop: true, align: "center", duration: 60 });
   const [hovered, setHovered] = useState(false);
   const [focused, setFocused] = useState(false);
   const [selected, setSelected] = useState(0);
@@ -36,10 +35,10 @@ const PhotoGrid = () => {
   }, [carousel]);
 
   useEffect(() => {
-    if (!carousel || !playing || hovered || focused || reduceMotion) return;
-    const timer = window.setInterval(() => carousel.scrollNext(), 7000);
+    if (!carousel || hovered || focused || reduceMotion) return;
+    const timer = window.setInterval(() => carousel.scrollNext(), 5000);
     return () => window.clearInterval(timer);
-  }, [carousel, playing, hovered, focused, reduceMotion]);
+  }, [carousel, hovered, focused, reduceMotion]);
 
   return (
     <section className="section-padding" aria-label="Meredith and Gideon's photos" aria-roledescription="carousel"
@@ -58,7 +57,7 @@ const PhotoGrid = () => {
                 role="group" aria-roledescription="slide" aria-label={`${index + 1} of ${photos.length}`}>
                 <button
                   type="button"
-                  onClick={() => { setPlaying(false); lightbox.open(index); }}
+                  onClick={() => lightbox.open(index)}
                   aria-label={`View larger photo: ${photo.alt}`}
                   className="block w-full aspect-[4/5] overflow-hidden cursor-zoom-in focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-foreground/60"
                 >
@@ -72,11 +71,6 @@ const PhotoGrid = () => {
           <button type="button" onClick={() => carousel?.scrollPrev()} aria-label="Previous gallery photo"
             className="w-11 h-11 rounded-full border border-foreground/40 text-2xl hover:bg-foreground/10">‹</button>
           <span className="overline" aria-live="off">{selected + 1} / {photos.length}</span>
-          {!reduceMotion && (
-            <button type="button" onClick={() => setPlaying((value) => !value)}
-              aria-label={playing ? "Pause photo carousel" : "Play photo carousel"}
-              className="btn-ghost text-sm">{playing ? "Pause" : "Play"}</button>
-          )}
           <button type="button" onClick={() => carousel?.scrollNext()} aria-label="Next gallery photo"
             className="w-11 h-11 rounded-full border border-foreground/40 text-2xl hover:bg-foreground/10">›</button>
         </div>
