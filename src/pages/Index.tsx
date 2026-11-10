@@ -6,7 +6,7 @@ import RegistrySection from "@/components/RegistrySection";
 import FooterRSVP from "@/components/FooterRSVP";
 
 const Index = () => (
-  <div className="min-h-screen bg-background">
+  <div className="min-h-screen bg-background homepage-gradient">
     <Navigation />
     <HeroSection />
     <PhotoGrid />
