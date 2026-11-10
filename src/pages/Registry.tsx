@@ -1,4 +1,5 @@
 import "./Wallpaper.css";
+import "./CompactPages.css";
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import { Link } from "react-router-dom";
@@ -15,7 +16,7 @@ const categories = [
 ];
 
 const Registry = () => (
-  <div className="min-h-screen wallpaper-page wallpaper-registry">
+  <div className="min-h-screen wallpaper-page wallpaper-registry registry-compact">
     <Navigation />
 
     <section className="pt-24 md:pt-32 pb-16 md:pb-24 px-6">

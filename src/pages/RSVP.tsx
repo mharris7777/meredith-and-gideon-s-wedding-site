@@ -1,4 +1,5 @@
 import "./Wallpaper.css";
+import "./CompactPages.css";
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { submitRSVP } from "@/lib/rsvp";
@@ -74,7 +75,7 @@ const RSVP = () => {
   ];
 
   return (
-    <div className="min-h-screen wallpaper-page wallpaper-rsvp">
+    <div className="min-h-screen wallpaper-page wallpaper-rsvp rsvp-compact">
       <Navigation />
 
       <section className="pt-24 md:pt-32 pb-12 md:pb-16 px-6 text-center">
@@ -128,7 +129,7 @@ const RSVP = () => {
             </div>
           ))}
 
-          <div className="mb-6 md:mb-8">
+          <div className="rsvp-attendance mb-6 md:mb-8">
             <label className="form-label">Will you be attending?</label>
             <div className="flex flex-col gap-3">
               {[
@@ -182,7 +183,7 @@ const RSVP = () => {
             </>
           )}
 
-          <div className="mb-6 md:mb-8">
+          <div className="rsvp-message mb-6 md:mb-8">
             <label htmlFor="message" className="form-label">Personal Message</label>
             <textarea
               id="message"

@@ -1,0 +1,145 @@
+@media (min-width: 1024px) {
+  .registry-compact > section {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding: 100px 32px 24px;
+    align-items: stretch;
+  }
+
+  .registry-compact > section > .content-left {
+    width: 100%;
+    max-width: none;
+    padding: 28px;
+    margin: 0;
+  }
+
+  .registry-compact > section > div:first-child,
+  .registry-compact > section > div:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .registry-compact h1 {
+    font-size: 42px;
+    margin-bottom: 12px;
+  }
+
+  .registry-compact .body-text,
+  .registry-compact .font-serif:not(h1) {
+    font-size: 21px;
+    line-height: 1.45;
+  }
+
+  .registry-compact .overline {
+    margin-bottom: 12px;
+  }
+
+  .registry-compact .body-text.mb-8 {
+    margin-bottom: 20px;
+  }
+
+  .registry-compact .content-left > div {
+    margin-bottom: 0;
+  }
+
+  .registry-compact .content-left > p:has(a:empty) {
+    display: none;
+  }
+
+  .rsvp-compact {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    align-items: start;
+    gap: 28px;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding: 100px 32px 24px;
+  }
+
+  .rsvp-compact > section {
+    padding: 0;
+  }
+
+  .rsvp-compact > section > .content-left {
+    max-width: none;
+    padding: 28px;
+    text-align: left;
+  }
+
+  .rsvp-compact h1 {
+    font-size: clamp(32px, 3.4vw, 48px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+
+  .rsvp-compact > section p.font-serif,
+  .rsvp-compact .body-text {
+    font-size: 20px;
+    line-height: 1.45;
+  }
+
+  .rsvp-compact form.content-left {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 28px;
+  }
+
+  .rsvp-compact form > div {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 20px;
+  }
+
+  .rsvp-compact form > div > div {
+    margin-bottom: 0;
+    min-width: 0;
+  }
+
+  .rsvp-compact .rsvp-attendance,
+  .rsvp-compact .rsvp-message,
+  .rsvp-compact form [role="alert"],
+  .rsvp-compact form button[type="submit"] {
+    grid-column: 1 / -1;
+  }
+
+  .rsvp-compact .form-label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    margin-bottom: 6px;
+  }
+
+  .rsvp-compact .form-input {
+    font-size: 18px;
+    padding: 8px;
+    min-height: 44px;
+  }
+
+  .rsvp-compact .rsvp-attendance > div {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+  }
+
+  .rsvp-compact .rsvp-attendance span {
+    font-size: 19px;
+    line-height: 1.4;
+  }
+
+  .rsvp-compact textarea.form-input {
+    min-height: 80px;
+    height: 80px;
+  }
+
+  .rsvp-compact button[type="submit"] {
+    font-size: 18px;
+    padding: 12px;
+  }
+
+  .rsvp-compact form [role="alert"] {
+    margin: 0;
+    font-size: 16px;
+  }
+}
