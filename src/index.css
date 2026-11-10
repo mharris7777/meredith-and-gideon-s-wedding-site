@@ -109,10 +109,9 @@
       180deg,
       hsl(var(--background)) 0%,
       hsl(var(--background)) 12%,
-      hsl(var(--accent) / 0.5) 32%,
-      hsl(var(--secondary) / 0.6) 52%,
-      hsl(var(--muted)) 74%,
-      hsl(var(--garden-green) / 0.2) 94%,
+      hsl(30 38% 89%) 38%,
+      hsl(90 16% 87%) 72%,
+      hsl(90 14% 89%) 92%,
       hsl(var(--background)) 100%
     );
   }
