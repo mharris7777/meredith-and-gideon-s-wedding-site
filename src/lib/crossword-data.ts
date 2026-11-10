@@ -142,7 +142,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "DEMAREST",
-      "clue": "Where they’ll be during their “I do”s",
+      "clue": "Where they'll do their \"I do\"s",
       "row": 1,
       "col": 1,
       "direction": "across",
