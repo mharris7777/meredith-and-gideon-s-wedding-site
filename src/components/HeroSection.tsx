@@ -1,3 +1,4 @@
+import "./HeroSection.css";
 import { motion } from "framer-motion";
 import DateSection from "@/components/DateSection";
 import heroImage from "@/assets/meredith-gideon-028.jpg";
@@ -38,9 +39,9 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2, delay: 1.0 }}
-          className="text-4xl md:text-6xl lg:text-8xl font-serif text-foreground text-center leading-snug mb-4"
+          className="text-4xl md:text-6xl lg:text-8xl homepage-couple-name text-foreground text-center leading-snug mb-4"
         >
-          MEREDITH & GIDEON
+          Meredith & Gideon
         </motion.h1>
         <motion.p
           initial={{ opacity: 0 }}
