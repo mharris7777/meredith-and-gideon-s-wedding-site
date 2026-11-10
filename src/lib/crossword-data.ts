@@ -7,7 +7,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
   "entries": [
     {
       "answer": "DEVILINTHEWHITECITY",
-      "clue": "Favorite book (5 words)",
+      "clue": "Favorite Larson book pairing a fair with foul play",
       "row": 10,
       "col": 1,
       "direction": "across",
@@ -16,7 +16,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "MATZOBALLSOUP",
-      "clue": "Meredith’s favorite Jewish food (3 words)",
+      "clue": "Ultimate Comfort Food",
       "row": 8,
       "col": 18,
       "direction": "down",
@@ -25,7 +25,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "URBANSTUDIES",
-      "clue": "College major for both (2 words)",
+      "clue": "What they both studied in undergrad",
       "row": 17,
       "col": 7,
       "direction": "across",
@@ -34,7 +34,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "MEXICOCITY",
-      "clue": "Favorite city (2 words)",
+      "clue": "Their favorite city",
       "row": 7,
       "col": 6,
       "direction": "down",
@@ -43,7 +43,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "HAMILTON",
-      "clue": "Broadway favorite",
+      "clue": "The Ten-Dollar, Founding Father",
       "row": 7,
       "col": 4,
       "direction": "across",
@@ -52,7 +52,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "HANOIHOUSE",
-      "clue": "Most visited restaurant (2 words)",
+      "clue": "Where they’re regulars",
       "row": 1,
       "col": 10,
       "direction": "down",
@@ -61,7 +61,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "LAMBORGHINI",
-      "clue": "Gideon’s dream car",
+      "clue": "Italian dream machine on Gideon’s wish list",
       "row": 0,
       "col": 4,
       "direction": "down",
@@ -70,7 +70,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "KNUCKLES",
-      "clue": "Meredith’s pet peeve",
+      "clue": "Things Meredith would rather you didn’t crack",
       "row": 3,
       "col": 9,
       "direction": "across",
@@ -79,7 +79,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "STUYTOWN",
-      "clue": "Where they live (2 words)",
+      "clue": "Their ride or die (town)",
       "row": 15,
       "col": 5,
       "direction": "across",
@@ -88,7 +88,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "BEYONCE",
-      "clue": "Meredith’s favorite celebrity",
+      "clue": "Meredith’s Queen",
       "row": 2,
       "col": 15,
       "direction": "down",
@@ -97,7 +97,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "ORANGE",
-      "clue": "Gideon’s favorite color",
+      "clue": "Gideon’s favorite color comes with a peel",
       "row": 15,
       "col": 10,
       "direction": "down",
@@ -106,7 +106,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "SINGING",
-      "clue": "Meredith’s talent",
+      "clue": "Meredith’s talent that’s worth making a note of",
       "row": 5,
       "col": 6,
       "direction": "across",
@@ -115,7 +115,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "LIVINGSTON",
-      "clue": "Meredith’s hometown",
+      "clue": "Meredith’s Previous Place of “Living”",
       "row": 12,
       "col": 10,
       "direction": "across",
@@ -124,7 +124,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "BARNARD",
-      "clue": "Meredith’s undergraduate college",
+      "clue": "Where Meredith went from having 2 Sisters to Seven",
       "row": 14,
       "col": 14,
       "direction": "across",
@@ -133,7 +133,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "TENAFLY",
-      "clue": "Gideon’s hometown",
+      "clue": "Tiger Town",
       "row": 9,
       "col": 2,
       "direction": "down",
@@ -142,7 +142,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "DEMAREST",
-      "clue": "Wedding location",
+      "clue": "Where they’ll be during their “I do”s",
       "row": 1,
       "col": 1,
       "direction": "across",
@@ -151,7 +151,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "YANKEES",
-      "clue": "Gideon’s baseball team",
+      "clue": "Gideon’s team in pinstripes",
       "row": 6,
       "col": 13,
       "direction": "across",
@@ -160,7 +160,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "JAYZ",
-      "clue": "Most famous person they’ve met (hyphenated)",
+      "clue": "Their biggest celebrity encounter",
       "row": 15,
       "col": 0,
       "direction": "across",
@@ -169,7 +169,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "PENN",
-      "clue": "Gideon’s college",
+      "clue": "Gideon’s Ivy",
       "row": 0,
       "col": 6,
       "direction": "down",
@@ -178,7 +178,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "BBYO",
-      "clue": "Where they met",
+      "clue": "Four letters at the start of their love story",
       "row": 4,
       "col": 1,
       "direction": "across",
@@ -187,7 +187,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "BILLS",
-      "clue": "Gideon’s football team",
+      "clue": "Pegula’s pride",
       "row": 4,
       "col": 1,
       "direction": "down",
@@ -196,7 +196,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "DRAKE",
-      "clue": "Gideon’s favorite celebrity",
+      "clue": "Gideon’s favorite celebrity started from the bottom",
       "row": 0,
       "col": 13,
       "direction": "down",
@@ -205,7 +205,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "USOPEN",
-      "clue": "Favorite sporting event (2 words)",
+      "clue": "Their favorite sporting event",
       "row": 20,
       "col": 6,
       "direction": "across",
@@ -214,7 +214,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "JAPAN",
-      "clue": "Meredith’s dream destination",
+      "clue": "Destination on Meredith’s wish list—and their honeymoon itinerary",
       "row": 15,
       "col": 0,
       "direction": "down",
@@ -223,7 +223,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "PIANO",
-      "clue": "Gideon’s instrument",
+      "clue": "Where Gideon can strike a chord",
       "row": 17,
       "col": 0,
       "direction": "across",
@@ -232,7 +232,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "PAROS",
-      "clue": "Proposal destination",
+      "clue": "Proposal Place",
       "row": 2,
       "col": 19,
       "direction": "down",
@@ -241,7 +241,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "JTS",
-      "clue": "Meredith’s other school",
+      "clue": "Three more letters in Meredith’s education",
       "row": 16,
       "col": 13,
       "direction": "down",
@@ -250,7 +250,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "FOUR",
-      "clue": "Number of Meredith’s nieces and nephews",
+      "clue": "Meredith’s nieces and nephews count",
       "row": 16,
       "col": 4,
       "direction": "down",
@@ -259,7 +259,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "DOG",
-      "clue": "Favorite animal",
+      "clue": "Their favorite animal is famously a best friend",
       "row": 14,
       "col": 20,
       "direction": "down",
