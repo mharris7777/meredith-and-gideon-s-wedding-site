@@ -45,7 +45,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "TIETHEKNOT",
-      "clue": "Get hitched—or finish fastening a bow tie?",
+      "clue": "Make it official/keep your shoelaces from coming undone",
       "row": 16,
       "col": 8,
       "direction": "across",
