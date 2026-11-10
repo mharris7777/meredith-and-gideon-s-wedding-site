@@ -2,14 +2,14 @@
   position: relative;
   display: grid;
   place-items: center;
-  height: clamp(300px, 43vw, 460px);
+  height: clamp(330px, 48vw, 520px);
   overflow: hidden;
   touch-action: pan-y;
 }
 
 .orbit-photo {
   position: absolute;
-  width: clamp(160px, 27vw, 320px);
+  width: clamp(180px, 30vw, 360px);
   aspect-ratio: 4 / 5;
   border: 2px solid hsl(var(--card));
   background: hsl(var(--card));
