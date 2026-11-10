@@ -142,6 +142,7 @@ export function usePhotoLightbox(photos: Photo[]) {
 
   return {
     open: setIndex,
+    isOpen: index !== null,
     element: (
       <PhotoLightbox photos={photos} index={index} onClose={close} onPrev={prev} onNext={next} />
     ),

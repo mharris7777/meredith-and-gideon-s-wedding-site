@@ -1,0 +1,19 @@
+.orbit-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: clamp(300px, 43vw, 460px);
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.orbit-photo {
+  position: absolute;
+  width: clamp(160px, 27vw, 320px);
+  aspect-ratio: 4 / 5;
+  border: 2px solid hsl(var(--card));
+  background: hsl(var(--card));
+  box-shadow: 0 10px 24px hsl(var(--foreground) / 0.12);
+  transform-origin: center;
+  will-change: transform;
+}
