@@ -21,10 +21,9 @@ function OrbitPhoto({ photo, slot, rotation, radius, open }: {
   const radians = useTransform(rotation, (value) => (value + slot * 45) * Math.PI / 180);
   const x = useTransform(radians, (value) => Math.sin(value) * radius);
   const scale = useTransform(radians, (value) => 0.58 + 0.42 * (Math.cos(value) + 1) / 2);
-  const opacity = useTransform(radians, (value) => 0.65 + 0.35 * (Math.cos(value) + 1) / 2);
   const zIndex = useTransform(radians, (value) => Math.round((Math.cos(value) + 1) * 50));
   return (
-    <motion.div className="orbit-photo" style={{ x, scale, opacity, zIndex }}>
+    <motion.div className="orbit-photo" style={{ x, scale, zIndex }}>
       <button type="button" onClick={open} aria-label={`View larger photo: ${photo.alt}`}
         className="block w-full h-full cursor-zoom-in focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">
         <img src={photo.src} alt={photo.alt} draggable={false} className="w-full h-full object-cover" />
