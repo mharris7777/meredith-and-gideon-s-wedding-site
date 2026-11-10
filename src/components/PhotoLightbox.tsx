@@ -15,11 +15,36 @@ const stop = (event: React.MouseEvent) => event.stopPropagation();
 
 function PhotoLightbox({ photos, index, onClose, onPrev, onNext }: LightboxProps) {
   const closeRef = useRef<HTMLButtonElement>(null);
+  const viewerRef = useRef<HTMLDivElement>(null);
+  const [zoom, setZoom] = useState(1);
+  const [zoomOrigin, setZoomOrigin] = useState("50% 50%");
   const photo = index === null ? null : photos[index];
   const many = photos.length > 1;
 
   useEffect(() => {
+    setZoom(1);
+    setZoomOrigin("50% 50%");
     if (index !== null) closeRef.current?.focus();
+  }, [index]);
+
+  useEffect(() => {
+    const viewer = viewerRef.current;
+    if (!viewer || index === null) return;
+    const onWheel = (event: WheelEvent) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      const frame = target.closest<HTMLElement>("[data-zoom-photo]");
+      if (!frame || !viewer.contains(frame)) return;
+      event.preventDefault();
+      const bounds = frame.getBoundingClientRect();
+      const originX = Math.max(0, Math.min(100, (event.clientX - bounds.left) / bounds.width * 100));
+      const originY = Math.max(0, Math.min(100, (event.clientY - bounds.top) / bounds.height * 100));
+      setZoomOrigin(`${originX}% ${originY}%`);
+      const delta = event.deltaY * (event.deltaMode === 1 ? 16 : event.deltaMode === 2 ? bounds.height : 1);
+      setZoom((current) => Math.max(1, Math.min(4, current * Math.exp(-delta * 0.002))));
+    };
+    viewer.addEventListener("wheel", onWheel, { passive: false });
+    return () => viewer.removeEventListener("wheel", onWheel);
   }, [index]);
 
   return (
@@ -39,7 +64,14 @@ function PhotoLightbox({ photos, index, onClose, onPrev, onNext }: LightboxProps
           <div className="flex items-start justify-between gap-4 px-6 md:px-10 pt-6 pb-2">
             <p className="overline pt-3">
               {many && index !== null ? `${index + 1} of ${photos.length}` : ""}
+              {zoom > 1 && <span className="ml-3">{Math.round(zoom * 100)}%</span>}
             </p>
+            {zoom > 1 && (
+              <button type="button" onClick={(event) => { stop(event); setZoom(1); setZoomOrigin("50% 50%"); }}
+                className="btn-ghost ml-auto my-3 text-sm" aria-label="Reset photo zoom">
+                Reset zoom
+              </button>
+            )}
             <button
               ref={closeRef}
               type="button"
@@ -54,7 +86,7 @@ function PhotoLightbox({ photos, index, onClose, onPrev, onNext }: LightboxProps
             </button>
           </div>
 
-          <div className="flex-1 min-h-0 flex items-center justify-center px-14 md:px-24 pb-2">
+          <div ref={viewerRef} className="flex-1 min-h-0 flex items-center justify-center px-14 md:px-24 pb-2">
             <AnimatePresence mode="wait">
               <motion.figure
                 key={index}
@@ -65,12 +97,14 @@ function PhotoLightbox({ photos, index, onClose, onPrev, onNext }: LightboxProps
                 onClick={stop}
                 className="polaroid-frame inline-block min-w-0 max-w-full"
               >
+                <div data-zoom-photo className="overflow-hidden" onDoubleClick={() => { setZoom(1); setZoomOrigin("50% 50%"); }}>
                 <img
                   src={photo.src}
                   alt={photo.alt}
                   className="block w-auto h-auto max-w-[calc(100vw-9rem)] md:max-w-[min(1500px,calc(100vw-14rem))] object-contain"
-                  style={{ maxHeight: "calc(100dvh - 210px)" }}
+                  style={{ maxHeight: "calc(100dvh - 210px)", transform: `scale(${zoom})`, transformOrigin: zoomOrigin }}
                 />
+                </div>
               </motion.figure>
             </AnimatePresence>
           </div>
