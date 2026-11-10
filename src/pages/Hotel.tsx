@@ -1,4 +1,5 @@
 import "./Wallpaper.css";
+import "./Hotel.css";
 
 import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
@@ -6,16 +7,16 @@ import PageHero from "@/components/PageHero";
 import { Link } from "react-router-dom";
 
 const Hotel = () => (
-  <div className="min-h-screen wallpaper-page wallpaper-hotel">
+  <div className="min-h-screen wallpaper-page wallpaper-hotel hotel-page">
     <Navigation />
     <PageHero />
 
-    <section className="pb-16 md:pb-24 px-6">
+    <section className="hotel-content pb-16 md:pb-24 px-6">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2 }}
-        className="content-left mb-16"
+        className="content-left hotel-accommodations mb-16"
       >
         <p className="overline mb-4">Accommodations</p>
         <h1 className="text-4xl md:text-6xl lg:text-8xl font-serif text-foreground leading-tight mb-6">
@@ -30,7 +31,7 @@ const Hotel = () => (
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 0.2 }}
-        className="content-left"
+        className="content-left hotel-details"
       >
         <div className="mb-16 md:mb-20">
           <p className="overline mb-4">Group Rate Details</p>
