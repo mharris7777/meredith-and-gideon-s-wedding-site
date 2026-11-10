@@ -1,0 +1,49 @@
+.crossword-main { max-width: 1400px; margin: auto; padding: 100px 32px 64px; }
+.crossword-heading { max-width: 760px; margin-bottom: 32px; }
+.crossword-heading h1 { font-size: clamp(32px, 4vw, 54px); line-height: 1.2; margin: 12px 0; }
+.crossword-heading > p:not(.overline) { font-size: 18px; line-height: 1.5; }
+.crossword-heading .crossword-hint { font-size: 14px !important; margin-top: 10px; color: hsl(var(--muted-foreground)); }
+.crossword-layout { display: grid; grid-template-columns: minmax(0, 650px) minmax(0, 1fr); gap: 40px; align-items: start; }
+.crossword-play { min-width: 0; }
+.crossword-selected { background: hsl(var(--card)); padding: 18px 20px; border-radius: 12px 12px 0 0; min-height: 94px; }
+.crossword-selected p { margin-top: 8px; font-family: 'Playfair Display', serif; font-size: 21px; }
+.crossword-board { border: 2px solid hsl(var(--foreground)); background: hsl(var(--foreground)); }
+.crossword-row { display: grid; }
+.crossword-cell, .crossword-black { position: relative; aspect-ratio: 1; min-width: 0; }
+.crossword-cell { display: flex; align-items: center; justify-content: center; padding: 0; border: 0.5px solid hsl(var(--foreground) / .45); color: hsl(var(--foreground)); background: hsl(var(--card)); }
+.crossword-cell.word-selected { background: hsl(var(--secondary) / .55); }
+.crossword-cell.cell-active { background: hsl(var(--primary) / .55); box-shadow: inset 0 0 0 2px hsl(var(--foreground)); }
+.crossword-cell:focus-visible { outline: 2px solid hsl(var(--foreground)); outline-offset: -3px; z-index: 1; }
+.crossword-number { position: absolute; top: 0; left: 2px; font: 9px/1.1 Inter, sans-serif; }
+.crossword-letter { font: 500 clamp(10px, 1.8vw, 20px)/1 Inter, sans-serif; padding-top: 5px; }
+.crossword-cell.cell-wrong .crossword-letter { color: hsl(var(--destructive)); text-decoration: underline dotted 2px; text-underline-offset: 3px; }
+.crossword-answer-label { display: block; margin: 20px 0 8px; font-size: 13px; }
+.crossword-answer { width: 100%; background: hsl(var(--card)); border: 1px solid hsl(var(--border)); border-radius: 8px; padding: 12px; font: 20px/1.5 Inter, sans-serif; letter-spacing: .13em; }
+.crossword-answer:focus { outline: 2px solid hsl(var(--primary)); outline-offset: 2px; }
+.crossword-help { font-size: 12px; line-height: 1.5; margin-top: 10px; color: hsl(var(--muted-foreground)); }
+.crossword-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 24px; margin-top: 20px; }
+.crossword-actions .btn-outline { font-size: 12px; padding: 10px 18px; }
+.crossword-progress { font-size: 14px; margin-top: 20px; }
+.crossword-reset { margin-top: 16px; background: hsl(var(--card)); border-radius: 8px; padding: 16px; display: flex; flex-wrap: wrap; gap: 16px; font-size: 14px; }
+.crossword-clues { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; background: hsl(var(--card) / .8); padding: 24px; border-radius: 12px; }
+.crossword-clues h2 { font-size: 27px; margin-bottom: 12px; }
+.crossword-clues ol { list-style: none; padding: 0; margin: 0; }
+.crossword-clues li { margin-bottom: 4px; }
+.crossword-clues li button { width: 100%; display: flex; align-items: baseline; gap: 9px; padding: 10px 8px; border-radius: 5px; text-align: left; font-size: 14px; line-height: 1.5; }
+.crossword-clues li button:hover { background: hsl(var(--secondary) / .2); }
+.crossword-clues li button.clue-selected { background: hsl(var(--secondary) / .4); }
+.clue-number { font-weight: 600; min-width: 17px; }
+.crossword-clues small { white-space: nowrap; font-size: 11px; color: hsl(var(--muted-foreground)); }
+@media (max-width: 1100px) { .crossword-layout { grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 24px; } .crossword-clues { grid-template-columns: 1fr; } }
+@media (max-width: 767px) {
+  .crossword-main { padding: 120px 16px 40px; }
+  .crossword-layout { display: block; }
+  .crossword-heading { margin-bottom: 24px; }
+  .crossword-selected { padding: 14px; }
+  .crossword-selected p { font-size: 18px; }
+  .crossword-selected .overline { font-size: 10px; }
+  .crossword-number { font-size: 7px; left: 1px; }
+  .crossword-letter { font-size: clamp(10px, 3vw, 16px); padding-top: 4px; }
+  .crossword-clues { margin-top: 28px; padding: 16px; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .crossword-clues li button { font-size: 13px; padding: 10px 4px; gap: 5px; }
+}

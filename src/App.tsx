@@ -9,6 +9,7 @@ import Index from "./pages/Index";
 import RSVP from "./pages/RSVP";
 import Hotel from "./pages/Hotel";
 import Registry from "./pages/Registry";
+import Crossword from "./pages/Crossword";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -102,6 +103,7 @@ const App = () => (
     <Route path="/rsvp" element={<RSVP />} />
     <Route path="/hotel" element={<Hotel />} />
     <Route path="/registry" element={<Registry />} />
+    <Route path="/crossword" element={<Crossword />} />
     <Route path="*" element={<NotFound />} />
   </Routes>
 </HashRouter>

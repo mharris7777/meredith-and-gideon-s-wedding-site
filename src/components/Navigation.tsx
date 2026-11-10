@@ -4,19 +4,20 @@ const links = [
   { to: "/hotel", label: "Hotel" },
   { to: "/registry", label: "Registry" },
   { to: "/rsvp", label: "RSVP" },
+  { to: "/crossword", label: "Crossword" },
 ];
 
 const Navigation = () => (
-  <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-3 md:px-12 md:py-4 flex items-center justify-between bg-background/90 backdrop-blur-[6px]">
+  <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-3 gap-3 flex-wrap md:flex-nowrap md:px-12 md:py-4 flex items-center justify-between bg-background/90 backdrop-blur-[6px]">
     <Link to="/" className="text-sm md:text-base font-serif tracking-wide text-foreground">
       Meredith & Gideon
     </Link>
-    <div className="flex items-center gap-5 md:gap-8">
+    <div className="flex items-center gap-3 sm:gap-4 md:gap-8">
       {links.map((link) => (
         <Link
           key={link.to}
           to={link.to}
-          className="text-xs font-sans tracking-[0.15em] uppercase text-foreground hover:opacity-70 transition-opacity"
+          className="text-[10px] sm:text-xs font-sans tracking-[0.15em] uppercase text-foreground hover:opacity-70 transition-opacity"
         >
           {link.label}
         </Link>
