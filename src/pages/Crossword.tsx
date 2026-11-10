@@ -81,14 +81,14 @@ const Crossword = () => {
           <p className="overline">A little about us</p>
           <h1>Love, Across &amp; Down</h1>
           <p>How well do you know Meredith &amp; Gideon? Solve all 33 clues.</p>
-          <p className="crossword-hint">Tap a clue or square to begin. Selecting a wedding-wordplay clue shades its related answers. Use letters only—no spaces, accents, or punctuation.</p>
+          <p className="crossword-hint">Tap a clue or square to begin. Selecting a connected clue shades its related answers. Use letters only—no spaces, accents, or punctuation.</p>
         </header>
         <div className="crossword-layout">
           <section className="crossword-play" aria-label="Crossword puzzle">
             <div className="crossword-selected" aria-live="polite">
               <span className="overline">{selected.number} {selected.direction} · {selected.answer.length} letters</span>
               <p>{selected.clue}</p>
-              {themeSelected && <small className="crossword-theme-note">Wedding wordplay · All five linked entries are shaded.</small>}
+              {themeSelected && <small className="crossword-theme-note">All five linked entries are shaded.</small>}
             </div>
             <div className="crossword-board" ref={gridRef} role="grid" aria-label="Wedding crossword" aria-rowcount={puzzle.rows} aria-colcount={puzzle.cols} onKeyDown={onGridKey}>
               {Array.from({ length: puzzle.rows }, (_, row) => (
@@ -131,7 +131,7 @@ const Crossword = () => {
               <h2>{direction === 'across' ? 'Across' : 'Down'}</h2>
               <ol>{sorted.filter(entry => entry.direction === direction).map(entry => <li key={entry.id}>
                 <button type="button" aria-pressed={selected.id === entry.id} onClick={() => chooseEntry(entry)} className={`${selected.id === entry.id ? 'clue-selected' : ''} ${themeSelected && entry.theme === 'wedding' ? 'clue-related' : ''}`}>
-                  <span className="clue-number">{entry.number}</span><span>{entry.clue} <small>({entry.answer.length})</small>{entry.theme === 'wedding' && <span className="crossword-theme-tag">Wedding wordplay</span>}</span>
+                  <span className="clue-number">{entry.number}</span><span>{entry.clue} <small>({entry.answer.length})</small></span>
                 </button>
               </li>)}</ol>
             </section>)}
