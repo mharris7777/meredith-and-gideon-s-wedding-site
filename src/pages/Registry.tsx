@@ -86,7 +86,7 @@ const Registry = () => (
               href="https://venmo.com/MeredithHarris"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-block rounded-[6px] bg-[#008CFF] px-6 py-3 font-sans font-bold text-white no-underline"
+              className="mt-6 inline-block rounded-[6px] bg-primary px-6 py-3 font-sans font-bold text-primary-foreground no-underline"
             >
               Send a Gift via Venmo
             </a>
