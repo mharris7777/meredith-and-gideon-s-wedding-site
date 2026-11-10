@@ -25,3 +25,10 @@ dist-ssr
 
 # Local migration scratch files
 /work/
+
+# Local Firebase emulator state and logs
+.firebase/
+firebase-debug.log*
+firestore-debug.log*
+ui-debug.log*
+functions/node_modules/

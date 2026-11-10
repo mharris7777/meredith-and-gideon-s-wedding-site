@@ -30,6 +30,7 @@ jobs:
       - run: npm ci --no-audit --no-fund
       - run: npm run typecheck
       - run: npm test
+      - run: node --test functions/src/scoring.test.js
       - run: npm run build
         env:
           VITE_RSVP_ENDPOINT: https://script.google.com/macros/s/AKfycbxxahewiURRfvXi48upGv2vo20hkyKc7aPggxM9L_P6mVLGU0JTh2Tf71Pr-7yZt-17/exec
