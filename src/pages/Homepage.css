@@ -89,6 +89,6 @@
   }
 }
 
-.homepage-compact > section[aria-roledescription="carousel"] > div {
+.homepage-compact > section[aria-roledescription="carousel"] > div:not([role="dialog"]) {
   max-width: 64rem;
 }
