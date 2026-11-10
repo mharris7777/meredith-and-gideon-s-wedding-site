@@ -4,8 +4,8 @@ import { solution, memberships, entryCells, cellKey, cleanAnswer } from './cross
 
 describe('wedding crossword', () => {
   it('includes every clue and consistent crossing letters', () => {
-    expect(puzzle.entries).toHaveLength(29);
-    expect(new Set(puzzle.entries.map(entry => entry.answer)).size).toBe(29);
+    expect(puzzle.entries).toHaveLength(33);
+    expect(new Set(puzzle.entries.map(entry => entry.answer)).size).toBe(33);
     for (const entry of puzzle.entries) {
       expect(entry.answer).toMatch(/^[A-Z]+$/);
       entryCells(entry).forEach((key, i) => expect(solution[key]).toBe(entry.answer[i]));
@@ -37,6 +37,12 @@ describe('wedding crossword', () => {
     expect(visited.size).toBe(Object.keys(solution).length);
     const numbers = [...new Set(puzzle.entries.map(entry => entry.number))].sort((a, b) => a - b);
     expect(numbers).toEqual(Array.from({ length: numbers.length }, (_, i) => i + 1));
+  });
+  it('links the revealer and exactly four wedding-wordplay answers', () => {
+    const themed = puzzle.entries.filter(entry => entry.theme === 'wedding');
+    expect(themed.map(entry => entry.answer).sort()).toEqual(['WEDDING', 'TIETHEKNOT', 'TAKETHEPLUNGE', 'PERFECTMATCH', 'SEALEDWITHAKISS'].sort());
+    expect(themed.find(entry => entry.answer === 'WEDDING')?.direction).toBe('across');
+    expect(puzzle.entries.some(entry => entry.answer === 'KNUCKLES')).toBe(false);
   });
   it('normalizes accented and multiword answers', () => {
     expect(cleanAnswer('Beyoncé')).toBe('BEYONCE');

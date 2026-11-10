@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type KeyboardEvent } from 'react';
 import Navigation from '@/components/Navigation';
 import { puzzle, type Entry } from '@/lib/crossword-data';
-import { cellKey, entryCells, solution, memberships, numbers, STORAGE_KEY, readProgress, cleanAnswer } from '@/lib/crossword';
+import { cellKey, entryCells, solution, memberships, numbers, STORAGE_KEY, readProgress, cleanAnswer, themeCells } from '@/lib/crossword';
 import './Crossword.css';
 
 const sorted = [...puzzle.entries].sort((a, b) => a.number - b.number);
@@ -14,6 +14,7 @@ const Crossword = () => {
   const [confirmReset, setConfirmReset] = useState(false);
   const gridRef = useRef<HTMLDivElement>(null);
   const currentCells = entryCells(selected);
+  const themeSelected = selected.theme === "wedding";
   const filled = Object.keys(letters).filter(key => solution[key] && letters[key]).length;
   const complete = Object.entries(solution).every(([key, value]) => letters[key] === value);
 
@@ -79,14 +80,15 @@ const Crossword = () => {
         <header className="crossword-heading">
           <p className="overline">A little about us</p>
           <h1>Love, Across &amp; Down</h1>
-          <p>How well do you know Meredith &amp; Gideon? Solve all 29 clues.</p>
-          <p className="crossword-hint">Tap a clue or square to begin. Answers use letters only—no spaces, accents, or punctuation.</p>
+          <p>How well do you know Meredith &amp; Gideon? Solve all 33 clues.</p>
+          <p className="crossword-hint">Tap a clue or square to begin. Selecting a wedding-wordplay clue shades its related answers. Use letters only—no spaces, accents, or punctuation.</p>
         </header>
         <div className="crossword-layout">
           <section className="crossword-play" aria-label="Crossword puzzle">
             <div className="crossword-selected" aria-live="polite">
               <span className="overline">{selected.number} {selected.direction} · {selected.answer.length} letters</span>
               <p>{selected.clue}</p>
+              {themeSelected && <small className="crossword-theme-note">Wedding wordplay · All five linked entries are shaded.</small>}
             </div>
             <div className="crossword-board" ref={gridRef} role="grid" aria-label="Wedding crossword" aria-rowcount={puzzle.rows} aria-colcount={puzzle.cols} onKeyDown={onGridKey}>
               {Array.from({ length: puzzle.rows }, (_, row) => (
@@ -96,10 +98,10 @@ const Crossword = () => {
                     if (!solution[key]) return <span key={key} role="gridcell" aria-label="Black square" className="crossword-black" />;
                     const wrong = checked && Boolean(letters[key]) && letters[key] !== solution[key];
                     return <button key={key} data-cell={key} role="gridcell" aria-rowindex={row + 1} aria-colindex={col + 1}
-                      aria-label={`Row ${row + 1}, column ${col + 1}${numbers[key] ? `, clue ${numbers[key]}` : ''}: ${letters[key] || 'empty'}${wrong ? ', incorrect' : ''}`}
+                      aria-label={`Row ${row + 1}, column ${col + 1}${numbers[key] ? `, clue ${numbers[key]}` : ''}: ${letters[key] || 'empty'}${wrong ? ', incorrect' : ''}${themeSelected && themeCells.has(key) ? ', linked wedding-theme square' : ''}`}
                       aria-selected={currentCells.includes(key)} tabIndex={activeCell === key ? 0 : -1}
                       onClick={() => chooseCell(key)}
-                      className={`crossword-cell ${currentCells.includes(key) ? 'word-selected' : ''} ${activeCell === key ? 'cell-active' : ''} ${wrong ? 'cell-wrong' : ''}`}>
+                      className={`crossword-cell ${themeSelected && themeCells.has(key) ? 'theme-related' : ''} ${currentCells.includes(key) ? 'word-selected' : ''} ${activeCell === key ? 'cell-active' : ''} ${wrong ? 'cell-wrong' : ''}`}>
                       {numbers[key] && <span className="crossword-number">{numbers[key]}</span>}
                       <span className="crossword-letter">{letters[key] ?? ''}</span>
                     </button>;
@@ -128,8 +130,8 @@ const Crossword = () => {
             {(['across', 'down'] as const).map(direction => <section key={direction}>
               <h2>{direction === 'across' ? 'Across' : 'Down'}</h2>
               <ol>{sorted.filter(entry => entry.direction === direction).map(entry => <li key={entry.id}>
-                <button type="button" aria-pressed={selected.id === entry.id} onClick={() => chooseEntry(entry)} className={selected.id === entry.id ? 'clue-selected' : ''}>
-                  <span className="clue-number">{entry.number}</span><span>{entry.clue} <small>({entry.answer.length})</small></span>
+                <button type="button" aria-pressed={selected.id === entry.id} onClick={() => chooseEntry(entry)} className={`${selected.id === entry.id ? 'clue-selected' : ''} ${themeSelected && entry.theme === 'wedding' ? 'clue-related' : ''}`}>
+                  <span className="clue-number">{entry.number}</span><span>{entry.clue} <small>({entry.answer.length})</small>{entry.theme === 'wedding' && <span className="crossword-theme-tag">Wedding wordplay</span>}</span>
                 </button>
               </li>)}</ol>
             </section>)}
