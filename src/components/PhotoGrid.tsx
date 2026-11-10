@@ -42,7 +42,7 @@ const PhotoGrid = () => {
   }, [carousel, playing, hovered, focused, reduceMotion]);
 
   return (
-    <section className="section-padding bg-accent/50" aria-label="Meredith and Gideon's photos" aria-roledescription="carousel"
+    <section className="section-padding" aria-label="Meredith and Gideon's photos" aria-roledescription="carousel"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onFocusCapture={() => setFocused(true)}
