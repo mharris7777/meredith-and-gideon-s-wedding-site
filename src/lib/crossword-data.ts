@@ -61,7 +61,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "LAMBORGHINI",
-      "clue": "Italian dream machine on Gideon’s wish list",
+      "clue": "\"Mercy\" car - Gideon's dream",
       "row": 0,
       "col": 4,
       "direction": "down",
