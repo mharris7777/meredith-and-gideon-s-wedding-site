@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+        serif: ['"IM Fell English"', 'Georgia', 'serif'],
         sans: ['"Inter"', 'system-ui', 'sans-serif'],
       },
       colors: {

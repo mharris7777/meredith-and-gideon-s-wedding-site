@@ -1,12 +1,4 @@
-@font-face {
-  font-family: "Lily Wang";
-  src: url("../assets/lily-wang-title.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 .homepage-couple-name {
-  font-family: "Lily Wang", cursive;
+  font-family: "Pinyon Script", cursive;
   font-weight: 400;
 }
