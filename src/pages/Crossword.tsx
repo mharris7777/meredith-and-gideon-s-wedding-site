@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState, type KeyboardEvent } from 'react';
+import CrosswordLeaderboard from '@/components/CrosswordLeaderboard';
+import { useCrosswordResults } from '@/lib/useCrosswordResults';
 import Navigation from '@/components/Navigation';
 import { puzzle, type Entry } from '@/lib/crossword-data';
 import { cellKey, entryCells, solution, memberships, numbers, STORAGE_KEY, readProgress, cleanAnswer, themeCells } from '@/lib/crossword';
@@ -13,6 +15,9 @@ const Crossword = () => {
   const [checked, setChecked] = useState(false);
   const [confirmReset, setConfirmReset] = useState(false);
   const gridRef = useRef<HTMLDivElement>(null);
+  const results = useCrosswordResults(letters, setLetters, () => { setLetters({}); setChecked(false); requestAnimationFrame(() => gridRef.current?.scrollIntoView({ block: "center" })); });
+  const scoreSubmitted = Boolean(results.attempt?.submittedAt);
+  const answerLocked = scoreSubmitted || Boolean(results.attempt && (!results.ready || results.busy));
   const currentCells = entryCells(selected);
   const themeSelected = selected.theme === "wedding";
   const filled = Object.keys(letters).filter(key => solution[key] && letters[key]).length;
@@ -41,6 +46,7 @@ const Crossword = () => {
     focusCell(next);
   };
   const onGridKey = (event: KeyboardEvent<HTMLDivElement>) => {
+    if (answerLocked && (/^[a-zA-Z]$/.test(event.key) || event.key === "Backspace" || event.key === "Delete")) { event.preventDefault(); return; }
     if (/^[a-zA-Z]$/.test(event.key)) {
       event.preventDefault();
       setLetters(previous => ({ ...previous, [activeCell]: event.key.toUpperCase() }));
@@ -65,6 +71,7 @@ const Crossword = () => {
     }
   };
   const writeAnswer = (text: string) => {
+    if (answerLocked) return;
     const answer = cleanAnswer(text).slice(0, selected.answer.length);
     setLetters(previous => {
       const next = { ...previous };
@@ -82,6 +89,9 @@ const Crossword = () => {
           <h1>Love, Across &amp; Down</h1>
           <p>How well do you know Meredith &amp; Gideon? Solve all 33 clues.</p>
           <p className="crossword-hint">Tap a clue or square to begin. Selecting a connected clue shades its related answers. Use letters only—no spaces, accents, or punctuation.</p>
+          {results.configured && <button type="button" className="btn-ghost mt-4 text-sm" onClick={() => document.getElementById('crossword-results')?.scrollIntoView({ block: 'start' })}>
+            {results.attempt ? 'View your results and leaderboard →' : 'Play for a score →'}
+          </button>}
         </header>
         <div className="crossword-layout">
           <section className="crossword-play" aria-label="Crossword puzzle">
@@ -110,13 +120,13 @@ const Crossword = () => {
               ))}
             </div>
             <label className="crossword-answer-label" htmlFor="crossword-answer">Type your answer for {selected.number} {selected.direction}</label>
-            <input id="crossword-answer" className="crossword-answer" value={currentCells.map(key => letters[key] || ' ').join('').trimEnd()}
+            <input id="crossword-answer" disabled={answerLocked} className="crossword-answer" value={currentCells.map(key => letters[key] || ' ').join('').trimEnd()}
               onFocus={event => event.currentTarget.select()} onChange={event => writeAnswer(event.target.value)} autoComplete="off" autoCapitalize="characters" spellCheck={false}
               aria-describedby="crossword-answer-help" />
             <p id="crossword-answer-help" className="crossword-help">Or type directly on the grid. Arrow keys move; tap an intersection twice to switch direction.</p>
             <div className="crossword-actions">
-              <button type="button" className="btn-outline" onClick={() => setChecked(value => !value)}>{checked ? 'Hide checks' : 'Check answers'}</button>
-              <button type="button" className="btn-ghost" onClick={() => setConfirmReset(true)}>Start over</button>
+              <button type="button" className="btn-outline" disabled={results.busy} onClick={async () => { if (checked) setChecked(false); else if (await results.check()) setChecked(true); }}>{checked ? 'Hide checks' : 'Check answers'}</button>
+              <button type="button" disabled={answerLocked} className="btn-ghost" onClick={() => setConfirmReset(true)}>Start over</button>
             </div>
             {confirmReset && <div className="crossword-reset" role="group" aria-label="Confirm starting over">
               <p>Clear all your answers?</p>
@@ -137,6 +147,7 @@ const Crossword = () => {
             </section>)}
           </aside>
         </div>
+        <CrosswordLeaderboard results={results} />
       </main>
     </div>
   );
