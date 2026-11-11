@@ -14,5 +14,7 @@ for (const entry of data.entries) {
   }
   words.push({ id: entry.id, cells });
 }
-writeFileSync(new URL('../functions/src/puzzle.js', import.meta.url), `export const puzzleVersion = ${JSON.stringify(version)};\nexport const solution = ${JSON.stringify(solution)};\nexport const words = ${JSON.stringify(words)};\n`);
+const quote = s => `'${s.replaceAll("'", "''")}'`;
+const sql = `insert into crossword_private.puzzles(id, solution, words) values (${quote(version)}, ${quote(JSON.stringify(solution))}::jsonb, ${quote(JSON.stringify(words))}::jsonb);\n`;
+writeFileSync(new URL('../supabase/migrations/202611110002_seed_crossword.sql', import.meta.url), sql);
 console.log(`Synced ${words.length} words for ${version}.`);

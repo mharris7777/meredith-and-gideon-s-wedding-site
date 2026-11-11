@@ -1,2 +1,3 @@
-// Public HTTPS URL returned when Firebase deploys crosswordApi. No private keys belong here.
-export const FIREBASE_RESULTS_API_URL = '';
+// Public project settings only. Never put a secret or service-role key in the website.
+export const SUPABASE_PROJECT_URL = '';
+export const SUPABASE_PUBLISHABLE_KEY = '';
