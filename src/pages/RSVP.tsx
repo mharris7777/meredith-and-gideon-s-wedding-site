@@ -112,7 +112,7 @@ const RSVP = () => {
           transition={{ duration: 1.0, delay: 0.5 }}
         >
           {fields.map((field) => (
-            <div key={field.name} className="mb-6 md:mb-8">
+            <div key={field.name} className="col-span-full mb-6 md:mb-8">
               <label htmlFor={field.name} className="form-label">{field.label}</label>
               <input
                 id={field.name}
