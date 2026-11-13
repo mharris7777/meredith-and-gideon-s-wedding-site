@@ -11,7 +11,7 @@ function doPost(e) {
     const email = String(v.email || '').trim().slice(0, 250);
     const attendance = String(v.attending || '');
     const id = String(v.submissionId || '').slice(0, 100);
-    if (!name || !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
+    if (!name || (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) ||
         !['accepts', 'declines'].includes(attendance) || !id) {
       return ContentService.createTextOutput('Invalid submission');
     }

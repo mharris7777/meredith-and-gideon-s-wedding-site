@@ -47,3 +47,11 @@ it("aborts a stalled request rather than leaving the form sending forever", asyn
     vi.useRealTimers();
   }
 });
+
+it("submits without collecting an email and preserves the sheet column contract", async () => {
+  const fetchMock = vi.fn().mockResolvedValue(new Response("OK"));
+  vi.stubGlobal("fetch", fetchMock);
+  const { email: _email, ...withoutEmail } = data;
+  await submitRSVP("https://example.com/exec", withoutEmail);
+  expect(fetchMock.mock.calls[0][1].body.get("email")).toBe("");
+});

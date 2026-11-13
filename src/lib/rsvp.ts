@@ -1,6 +1,6 @@
 export interface RSVPSubmission {
   name: string;
-  email: string;
+  email?: string;
   attending: string;
   guests: string;
   dietary: string;
@@ -13,7 +13,7 @@ export async function submitRSVP(endpoint: string | undefined, data: RSVPSubmiss
   const body = new URLSearchParams({
     ...data,
     name: data.name.trim(),
-    email: data.email.trim(),
+    email: (data.email ?? "").trim(),
     guests: data.attending === "accepts" ? data.guests : "0",
     dietary: data.attending === "accepts" ? data.dietary : "",
     website: "",

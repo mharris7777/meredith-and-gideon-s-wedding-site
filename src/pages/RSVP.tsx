@@ -14,7 +14,6 @@ const RSVP = () => {
   const [attending, setAttending] = useState<string>("accepts");
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
     message: "",
     guests: "1",
     dietary: "",
@@ -71,7 +70,6 @@ const RSVP = () => {
 
   const fields = [
     { label: "Full Name", name: "name", type: "text", placeholder: "" },
-    { label: "Email Address", name: "email", type: "email", placeholder: "" },
   ];
 
   return (
