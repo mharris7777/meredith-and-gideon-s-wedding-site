@@ -54,13 +54,12 @@ const RSVP = () => {
       <Navigation />
       <section className="pt-24 md:pt-32 pb-12 md:pb-16 px-6 text-center">
         <div className="content-left">
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2 }} className="text-4xl md:text-6xl lg:text-8xl font-serif text-foreground mb-6 md:mb-8 leading-tight">
-            {submitted ? "Thank You!" : "We Look Forward to Seeing You!"}
+          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1.2 }} className={submitted ? "text-4xl md:text-6xl lg:text-8xl font-serif text-foreground mb-6 md:mb-8 leading-tight" : "rsvp-script-heading text-foreground"}>
+            {submitted ? "Thank You!" : "Kindly Respond"}
           </motion.h1>
-          <p className="body-text mb-3">
-            {submitted ? (attending === "accepts" ? "Your household's RSVP has been received. We can't wait to celebrate with you!" : "Your household's RSVP has been received. We'll miss you!") : "Please RSVP by August 4, 2027"}
+          <p className={submitted ? "body-text mb-3" : "rsvp-deadline"}>
+            {submitted ? (attending === "accepts" ? "Your household's RSVP has been received. We can't wait to celebrate with you!" : "Your household's RSVP has been received. We'll miss you!") : "BY THE SEVENTH OF AUGUST"}
           </p>
-          {!submitted && <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground font-serif">Your response helps us plan an unforgettable celebration</p>}
         </div>
       </section>
 
