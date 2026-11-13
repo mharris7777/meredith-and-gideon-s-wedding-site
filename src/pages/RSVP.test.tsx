@@ -11,7 +11,7 @@ it("keeps entered values on failure and reuses the submission ID on retry", asyn
   vi.mocked(submitRSVP).mockRejectedValueOnce(new Error("CORS")).mockResolvedValueOnce(undefined);
   render(<RSVP />);
   fireEvent.change(screen.getByLabelText("Full Name"), { target: { value: "Test Guest" } });
-  fireEvent.change(screen.getByLabelText("Email Address"), { target: { value: "test@example.com" } });
+  expect(screen.queryByLabelText("Email Address")).not.toBeInTheDocument();
   fireEvent.submit(screen.getByRole("button", { name: "Send RSVP" }).closest("form")!);
   await screen.findByRole("alert");
   expect(screen.queryByText("Thank You!")).not.toBeInTheDocument();
