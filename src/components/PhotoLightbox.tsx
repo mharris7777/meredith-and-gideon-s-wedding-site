@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
-export type Photo = { src: string; alt: string };
+export type Photo = { src: string; alt: string; srcSet?: string; fullSrc?: string };
 
 type LightboxProps = {
   photos: Photo[];
@@ -99,7 +99,7 @@ function PhotoLightbox({ photos, index, onClose, onPrev, onNext }: LightboxProps
               >
                 <div data-zoom-photo className="overflow-hidden" onDoubleClick={() => { setZoom(1); setZoomOrigin("50% 50%"); }}>
                 <img
-                  src={photo.src}
+                  src={photo.fullSrc ?? photo.src}
                   alt={photo.alt}
                   className="block w-auto h-auto max-w-[calc(100vw-9rem)] md:max-w-[min(1500px,calc(100vw-14rem))] object-contain"
                   style={{ maxHeight: "calc(100dvh - 210px)", transform: `scale(${zoom})`, transformOrigin: zoomOrigin }}

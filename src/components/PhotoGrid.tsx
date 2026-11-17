@@ -1,19 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { animate, motion, useAnimationFrame, useMotionValue, useReducedMotion, useTransform, type MotionValue } from "framer-motion";
 import "./PhotoCarousel.css";
-import photo1 from "@/assets/meredith-gideon-020.jpg";
-import photo2 from "@/assets/meredith-gideon-017.jpg";
-import photo3 from "@/assets/meredith-gideon-006.jpg";
-import photo4 from "@/assets/meredith-gideon-001.jpg";
+import { galleryPhotos as photos } from "@/components/engagementPhotos";
 import { usePhotoLightbox, type Photo } from "@/components/PhotoLightbox";
-
-const photos: Photo[] = [
-  { src: photo1, alt: "Meredith and Gideon embracing on a garden bench" },
-  { src: photo2, alt: "Meredith and Gideon surrounded by garden flowers" },
-  { src: photo3, alt: "Meredith and Gideon walking together in black and white" },
-  { src: photo4, alt: "Meredith and Gideon beneath autumn leaves" },
-];
-
 
 function OrbitPhoto({ photo, slot, rotation, radius, open }: {
   photo: Photo; slot: number; rotation: MotionValue<number>; radius: number; open: () => void;
@@ -26,7 +15,7 @@ function OrbitPhoto({ photo, slot, rotation, radius, open }: {
     <motion.div className="orbit-photo" style={{ x, scale, zIndex }}>
       <button type="button" onClick={open} aria-label={`View larger photo: ${photo.alt}`}
         className="block w-full h-full cursor-zoom-in focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">
-        <img src={photo.src} alt={photo.alt} draggable={false} className="w-full h-full object-cover" />
+        <img src={photo.src} srcSet={photo.srcSet} sizes="(min-width: 768px) 320px, 32vw" alt={photo.alt} loading="lazy" decoding="async" draggable={false} className="w-full h-full object-cover" />
       </button>
     </motion.div>
   );
