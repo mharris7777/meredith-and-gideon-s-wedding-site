@@ -1,11 +1,11 @@
 import "./HeroSection.css";
 import { motion } from "framer-motion";
 import DateSection from "@/components/DateSection";
-import { heroPhoto } from "@/components/engagementPhotos";
+import heroImage from "@/assets/meredith-gideon-028.jpg";
 import { usePhotoLightbox, type Photo } from "@/components/PhotoLightbox";
 
 const photos: Photo[] = [
-  heroPhoto,
+  { src: heroImage, alt: "Meredith and Gideon seated together overlooking the park" },
 ];
 
 const HeroSection = () => {
@@ -27,11 +27,9 @@ const HeroSection = () => {
         >
           <div className="polaroid-frame inline-block mb-14 md:mb-20">
             <img
-              src={heroPhoto.src}
-              srcSet={heroPhoto.srcSet}
-              sizes="(min-width: 768px) min(63vh, 1000px), 80vw"
-              width={960}
-              height={640}
+              src={heroImage}
+              width={4781}
+              height={3187}
               fetchPriority="high"
               decoding="async"
               alt={photos[0].alt}
