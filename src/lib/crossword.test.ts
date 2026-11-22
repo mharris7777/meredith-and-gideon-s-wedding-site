@@ -4,8 +4,8 @@ import { solution, memberships, entryCells, cellKey, cleanAnswer } from './cross
 
 describe('wedding crossword', () => {
   it('includes every clue and consistent crossing letters', () => {
-    expect(puzzle.entries).toHaveLength(33);
-    expect(new Set(puzzle.entries.map(entry => entry.answer)).size).toBe(33);
+    expect(puzzle.entries).toHaveLength(32);
+    expect(new Set(puzzle.entries.map(entry => entry.answer)).size).toBe(32);
     for (const entry of puzzle.entries) {
       expect(entry.answer).toMatch(/^[A-Z]+$/);
       entryCells(entry).forEach((key, i) => expect(solution[key]).toBe(entry.answer[i]));
@@ -43,6 +43,7 @@ describe('wedding crossword', () => {
     expect(themed.map(entry => entry.answer).sort()).toEqual(['WEDDING', 'TIETHEKNOT', 'AISLEBETHERE', 'PERFECTMATCH', 'SEALEDWITHAKISS'].sort());
     expect(themed.find(entry => entry.answer === 'WEDDING')?.direction).toBe('across');
     expect(puzzle.entries.some(entry => entry.answer === 'KNUCKLES')).toBe(false);
+    expect(puzzle.entries.some(entry => entry.answer === 'LAMBORGHINI')).toBe(false);
   });
   it('normalizes accented and multiword answers', () => {
     expect(cleanAnswer('Beyoncé')).toBe('BEYONCE');

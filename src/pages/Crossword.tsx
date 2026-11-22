@@ -87,7 +87,7 @@ const Crossword = () => {
         <header className="crossword-heading">
           <p className="overline">A little about us</p>
           <h1>Love, Across &amp; Down</h1>
-          <p>How well do you know Meredith &amp; Gideon? Solve all 33 clues.</p>
+          <p>How well do you know Meredith &amp; Gideon? Solve all {puzzle.entries.length} clues.</p>
           <p className="crossword-hint">Tap a clue or square to begin. Selecting a connected clue shades its related answers. Use letters only—no spaces, accents, or punctuation.</p>
           {results.configured && <button type="button" className="btn-ghost mt-4 text-sm" onClick={() => document.getElementById('crossword-results')?.scrollIntoView({ block: 'start' })}>
             {results.attempt ? 'View your results and leaderboard →' : 'Play for a score →'}

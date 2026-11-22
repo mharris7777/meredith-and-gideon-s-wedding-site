@@ -1,6 +1,6 @@
 import { SUPABASE_PROJECT_URL, SUPABASE_PUBLISHABLE_KEY } from './crossword-results-config';
-export const PUZZLE_VERSION = 'mg-crossword-v3';
-export const RESULTS_SESSION_KEY = 'mg-crossword-ranked-v3';
+export const PUZZLE_VERSION = 'mg-crossword-v4';
+export const RESULTS_SESSION_KEY = 'mg-crossword-ranked-v4';
 const projectUrl = import.meta.env.VITE_SUPABASE_URL?.trim() || SUPABASE_PROJECT_URL;
 const publishableKey = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY?.trim() || SUPABASE_PUBLISHABLE_KEY;
 export const RESULTS_ENDPOINT = projectUrl && publishableKey ? projectUrl : '';

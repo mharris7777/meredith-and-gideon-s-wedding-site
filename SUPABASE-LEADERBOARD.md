@@ -42,10 +42,12 @@ The loopback adapter is test-only and contains no live credentials. It is not a 
 
 ## Updating the puzzle
 
-For a changed grid, increment `PUZZLE_VERSION` in `src/lib/crossword-results.ts` and browser progress/session keys, then run `node scripts/sync-crossword-puzzle.mjs`. The script writes the seed for review. Once a migration is applied, never edit it: add a new migration for the new puzzle version. Apply that migration before publishing the matching frontend. Clue-text-only changes do not require new scoring data.
+For a changed grid, increment `PUZZLE_VERSION` in `src/lib/crossword-results.ts` and browser progress/session keys, then run `node scripts/sync-crossword-puzzle.mjs path/to/new-migration.sql`. The script writes the seed for review. Once a migration is applied, never edit it: add a new migration for the new puzzle version. Apply that migration before publishing the matching frontend. Clue-text-only changes do not require new scoring data.
 
 New-attempt throttling hashes network/hour buckets and automatically removes expired buckets during new starts; it does not retain raw IP addresses. The free plan can pause after inactivity; check the project is active before guests play.
 
 ## Intentional advisor findings
 
 The private tables have RLS with no guest policies: access is denied by default, and guests have no schema/table privileges. The four public SECURITY DEFINER RPCs are intentional: fixed search paths, bounded validated arguments, and hashed per-attempt tokens provide the guest API without exposing raw answers. Supabase flags these patterns for review. See [RLS without policies](https://supabase.com/docs/guides/database/database-linter?lint=0008_rls_enabled_no_policy) and [anonymous SECURITY DEFINER execution](https://supabase.com/docs/guides/database/database-linter?lint=0028_anon_security_definer_function_executable). These are reviewed design choices; there are no direct guest table grants.
+
+Puzzle v4 removes LAMBORGHINI, reconnects and renumbers the grid, and contains 32 entries. Previous puzzle versions and their results remain stored separately.

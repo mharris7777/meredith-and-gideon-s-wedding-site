@@ -1,12 +1,12 @@
 import { PGlite } from '@electric-sql/pglite';
-import { readFileSync } from 'node:fs';
+import { readFileSync, readdirSync } from 'node:fs';
 export async function createTestDatabase() {
   const db = new PGlite();
   await db.exec('create role anon; create role authenticated;');
-  for (const name of ['202611110001_crossword_results.sql', '202611110002_seed_crossword.sql']) {
+  for (const name of readdirSync(new URL('../migrations/', import.meta.url)).filter(name => name.endsWith('.sql')).sort()) {
     await db.exec(readFileSync(new URL('../migrations/'+name, import.meta.url), 'utf8'));
   }
-  const puzzle = (await db.query('select * from crossword_private.puzzles')).rows[0];
+  const puzzle = (await db.query('select * from crossword_private.puzzles order by id desc limit 1')).rows[0];
   await db.exec('set role anon');
   return { db, puzzle };
 }

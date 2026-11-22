@@ -22,9 +22,9 @@ test('Postgres enforces private responses, server scores, immutable results, and
     assert.equal((await save(a,puzzle.solution,3,'check',eventId)).checks,1);
     assert.equal((await save(a,puzzle.solution,3,'check',eventId)).checks,1);
     const submitted=await save(a,puzzle.solution,4,'submit');
-    assert.equal(submitted.correctWords,33); assert.equal(submitted.totalWords,33); assert.ok(submitted.submittedAt);
+    assert.equal(submitted.correctWords,32); assert.equal(submitted.totalWords,32); assert.ok(submitted.submittedAt);
     assert.ok(submitted.elapsedSeconds>=1);
-    assert.equal((await save(a,{},5)).correctWords,33);
+    assert.equal((await save(a,{},5)).correctWords,32);
     const b=await start('Partial Guest');
     const partial=Object.fromEntries(puzzle.words[0].cells.map(k=>[k,puzzle.solution[k]]));
     await assert.rejects(()=>save(b,{bad:'A'},1));
@@ -35,7 +35,7 @@ test('Postgres enforces private responses, server scores, immutable results, and
     assert.equal(board.rows[0].displayName,'No Checks'); assert.equal(board.rows[1].displayName,'Guest One');
     assert.equal(board.rows[0].responses,undefined); assert.equal(board.rows[0].token,undefined); assert.equal(board.total,3);
     assert.equal(board.rows[2].correctWords,1);
-    console.log('Passed: SQL permissions, attempt tokens, private saves, stale writes, idempotent checks, 33-word grading, immutable submissions, leaderboard.');
+    console.log('Passed: SQL permissions, attempt tokens, private saves, stale writes, idempotent checks, 32-word grading, immutable submissions, leaderboard.');
   } finally { await db.close(); }
 });
 
