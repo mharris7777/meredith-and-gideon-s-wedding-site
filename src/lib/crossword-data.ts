@@ -138,7 +138,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "DRAKE",
-      "clue": "Gideon’s favorite celebrity started from the bottom",
+      "clue": "Do it for the Graham (G - Celebrity)",
       "row": 15,
       "col": 24,
       "direction": "down",
@@ -228,7 +228,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "HANOIHOUSE",
-      "clue": "Where they’re regulars",
+      "clue": "Where we're regulars",
       "row": 13,
       "col": 0,
       "direction": "across",
@@ -264,7 +264,7 @@ export const puzzle: { rows: number; cols: number; entries: Entry[] } = {
     },
     {
       "answer": "BARNARD",
-      "clue": "Where Meredith went from having 2 Sisters to Seven",
+      "clue": "Morningside Heights Site (M - College)",
       "row": 5,
       "col": 8,
       "direction": "across",
